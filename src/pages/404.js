@@ -1,7 +1,6 @@
-import React from "react"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { SEO, Layout } from 'src/components'
 
 const NotFoundPage = () => (
   <Layout>
@@ -11,4 +10,5 @@ const NotFoundPage = () => (
   </Layout>
 )
 
+// eslint-disable-next-line import/no-default-export
 export default NotFoundPage
