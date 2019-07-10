@@ -1,13 +1,55 @@
 import React, { useMemo } from 'react'
 import { styled } from 'linaria/react'
+import { transparentize } from 'polished'
 
 import { externalLinkPropTypes } from 'src/common-prop-types'
 import { Icon } from 'src/components'
 import { isPhoneOrEmail } from 'src/helpers'
+import { theme } from 'src/theme'
 
-const LinksItem = styled.li``
+const Link = styled.a`
+  position: relative;
+  display: block;
 
-const Link = styled.a``
+  :focus {
+    outline: none;
+  }
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+    transition: all 0.2s ease-out;
+
+    :nth-child(1) {
+      fill: ${transparentize(0.7, theme.colors.black)};
+    }
+
+    :nth-child(2) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      fill: ${theme.colors.primary};
+      opacity: 0;
+    }
+  }
+
+  :hover svg,
+  :focus svg {
+    transform: scale(1.2);
+
+    :nth-child(1) {
+      opacity: 0;
+    }
+
+    :nth-child(2) {
+      fill: ${theme.colors.primary};
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+`
 
 export const ExternalLink = ({ url, iconVariant }) => {
   const target = useMemo(() => (isPhoneOrEmail(url) ? '_self' : '_blank'), [
@@ -15,11 +57,12 @@ export const ExternalLink = ({ url, iconVariant }) => {
   ])
 
   return (
-    <LinksItem key={url}>
+    <li key={url}>
       <Link href={url} target={target} rel="noopener noreferrer">
         <Icon variant={iconVariant} />
+        <Icon variant={iconVariant} aria-hidden="true" />
       </Link>
-    </LinksItem>
+    </li>
   )
 }
 
