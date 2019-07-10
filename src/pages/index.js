@@ -3,14 +3,12 @@ import { Link } from 'gatsby'
 import { styled } from 'linaria/react'
 
 import { SEO, Layout } from 'src/components'
-console.log(styled)
 
 const Header = styled.div`
   width: 100px;
   height: 100px;
   background-color: red;
 `
-
 
 const IndexPage = () => (
   <Layout>
