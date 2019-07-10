@@ -22,6 +22,7 @@ export const Links = ({ links }) => {
           key={link.url}
           url={link.url}
           iconVariant={link.iconVariant}
+          description={link.description}
         />
       ))}
     </LinksList>

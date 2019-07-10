@@ -11,16 +11,19 @@ const mockAvatarSrc =
 const links = [
   {
     url: 'https://github.com/AlexOuttaspace',
-    iconVariant: 'github'
+    iconVariant: 'github',
+    description: 'Visit my Github profile'
   },
   {
     url:
       'https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D0%BF%D0%BE%D0%BC%D0%B0%D0%B7%D0%B0%D0%BD-33a39718a/',
-    iconVariant: 'linkedin'
+    iconVariant: 'linkedin',
+    description: 'Visit my Linkedin profile'
   },
   {
     url: 'mailto:alexander.s.pomazan@gmail.com',
-    iconVariant: 'gmail'
+    iconVariant: 'gmail',
+    description: 'Send me an e-mail'
   }
 ]
 

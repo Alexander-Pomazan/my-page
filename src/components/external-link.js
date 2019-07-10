@@ -51,15 +51,20 @@ const Link = styled.a`
   }
 `
 
-export const ExternalLink = ({ url, iconVariant }) => {
+export const ExternalLink = ({ url, iconVariant, description }) => {
   const target = useMemo(() => (isPhoneOrEmail(url) ? '_self' : '_blank'), [
     url
   ])
 
   return (
     <li key={url}>
-      <Link href={url} target={target} rel="noopener noreferrer">
-        <Icon variant={iconVariant} />
+      <Link
+        href={url}
+        target={target}
+        aria-label={description}
+        rel="noopener noreferrer"
+      >
+        <Icon variant={iconVariant} role="presentation" />
         <Icon variant={iconVariant} aria-hidden="true" />
       </Link>
     </li>
