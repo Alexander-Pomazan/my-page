@@ -14,11 +14,11 @@ export const Github = ({ height, width }) => (
 )
 
 Github.defaultProps = {
-  height: 24,
-  width: 24
+  height: '1.5rem',
+  width: '1.5rem'
 }
 
 Github.propTypes = {
-  height: PropTypes.number,
-  width: PropTypes.number
+  height: PropTypes.string,
+  width: PropTypes.string
 }

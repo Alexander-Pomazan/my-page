@@ -14,11 +14,11 @@ export const Gmail = ({ height, width }) => (
 )
 
 Gmail.defaultProps = {
-  height: 24,
-  width: 24
+  height: '1.5rem',
+  width: '1.5rem'
 }
 
 Gmail.propTypes = {
-  height: PropTypes.number,
-  width: PropTypes.number
+  height: PropTypes.string,
+  width: PropTypes.string
 }
