@@ -18,12 +18,12 @@ module.exports = {
     "plugin:import/warnings",
     "plugin:react/recommended", // See https://github.com/yannickcr/eslint-plugin-react
     "prettier", // See https://github.com/prettier/eslint-plugin-prettier
-    "prettier/react"
+    "prettier/react" // prettier config should always be last in the list
   ],
   "plugins": [
     "react",
-    "prettier",
-    "import"
+    "import",
+    "prettier"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -38,6 +38,9 @@ module.exports = {
       node: {
         paths: [path.resolve(__dirname, '.')],
       },
+    },
+    react: {
+      version: "^16.8.0",
     },
   },
   "rules": {

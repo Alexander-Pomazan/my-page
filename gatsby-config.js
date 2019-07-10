@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -10,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-root-import`,
     `gatsby-plugin-eslint`,
+    `gatsby-plugin-linaria`,
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
@@ -18,8 +17,7 @@ module.exports = {
     //   },
     // },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-linaria`
+    `gatsby-plugin-sharp`
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
