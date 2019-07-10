@@ -1,6 +1,8 @@
 import React from 'react'
 import { styled } from 'linaria/react'
 
+import { Icon } from 'src/components'
+
 const Navigation = styled.nav``
 
 const LinksList = styled.ul`
@@ -26,7 +28,7 @@ export const Links = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Github
+            <Icon variant="github" />
           </ExternalLink>
         </LinksItem>
 
@@ -36,17 +38,7 @@ export const Links = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn
-          </ExternalLink>
-        </LinksItem>
-
-        <LinksItem>
-          <ExternalLink
-            href="https://github.com/AlexOuttaspace"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            asd
+            <Icon variant="linkedin" />
           </ExternalLink>
         </LinksItem>
       </LinksList>
