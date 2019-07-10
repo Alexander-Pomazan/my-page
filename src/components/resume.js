@@ -71,6 +71,22 @@ const Description = styled.p`
   font-size: 1.5rem;
 `
 
+const links = [
+  {
+    url: 'https://github.com/AlexOuttaspace',
+    iconVariant: 'github'
+  },
+  {
+    url:
+      'https://www.linkedin.com/in/%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80-%D0%BF%D0%BE%D0%BC%D0%B0%D0%B7%D0%B0%D0%BD-33a39718a/',
+    iconVariant: 'linkedin'
+  },
+  {
+    url: 'mailto:alexander.s.pomazan@gmail.com',
+    iconVariant: 'gmail'
+  }
+]
+
 export const Resume = () => {
   return (
     <Wrapper>
@@ -81,7 +97,7 @@ export const Resume = () => {
           <Avatar src={mockAvatarSrc} alt="Pomazan Alexander photo" />
           <Title>Alexander Pomazan</Title>
           <Description>Frontend developer</Description>
-          <Links />
+          <Links links={links} />
         </MainContent>
 
         <FillLeftSider />

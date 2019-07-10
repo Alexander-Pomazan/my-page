@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Github, Linkedin } from './brands'
+import { Github, Linkedin, Gmail } from './brands'
 
 const icons = {
   github: Github,
-  linkedin: Linkedin
+  linkedin: Linkedin,
+  gmail: Gmail
 }
 
 export const Icon = ({ variant, ...iconProps }) => {
@@ -17,5 +18,5 @@ export const Icon = ({ variant, ...iconProps }) => {
 }
 
 Icon.propTypes = {
-  variant: PropTypes.oneOf(['github', 'linkedin']).isRequired
+  variant: PropTypes.oneOf(Object.keys(icons)).isRequired
 }

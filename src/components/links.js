@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
-import { Icon } from 'src/components'
+import { externalLinkPropTypes } from 'src/common-prop-types'
+import { ExternalLink } from 'src/components'
 
 const Navigation = styled.nav``
 
@@ -14,34 +16,23 @@ const LinksList = styled.ul`
   }
 `
 
-const LinksItem = styled.li``
-
-const ExternalLink = styled.a``
-
-export const Links = () => {
+export const Links = ({ links }) => {
   return (
     <Navigation>
       <LinksList>
-        <LinksItem>
+        {links.map((link) => (
           <ExternalLink
-            href="https://github.com/AlexOuttaspace"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon variant="github" />
-          </ExternalLink>
-        </LinksItem>
-
-        <LinksItem>
-          <ExternalLink
-            href="https://github.com/AlexOuttaspace"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon variant="linkedin" />
-          </ExternalLink>
-        </LinksItem>
+            key={link.url}
+            url={link.url}
+            iconVariant={link.iconVariant}
+          />
+        ))}
       </LinksList>
     </Navigation>
   )
+}
+
+Links.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.shape(externalLinkPropTypes).isRequired)
+    .isRequired
 }
