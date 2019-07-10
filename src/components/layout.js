@@ -6,7 +6,7 @@ import './global.css'
 
 const Root = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 `
 
 export const Layout = ({ children }) => {
