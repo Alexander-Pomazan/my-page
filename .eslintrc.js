@@ -65,6 +65,7 @@ module.exports = {
     "react/jsx-filename-extension": "off",
     "react/boolean-prop-naming": "warn",
     "react/default-props-match-prop-types": "warn",
+    "react/self-closing-comp": "warn",
 
     // prettier
     "prettier/prettier": [
