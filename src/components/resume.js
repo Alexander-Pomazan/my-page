@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'linaria/react'
 
-import { MainContent } from 'src/components'
+import { MainContent, AdditionalInfo } from 'src/components'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -14,21 +14,38 @@ const Wrapper = styled.div`
 const Root = styled.div`
   width: 100%;
   max-width: 50rem;
-  box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.2);
+
   display: flex;
+  align-items: center;
 `
 
-const FillLeftSider = styled.div`
+const MainContentWrapper = styled.div`
   flex-grow: 1;
+  flex-basis: 50%;
+  background-color: var(--color-white);
+  box-shadow: var(--elevation-4);
+  z-index: 10;
+`
+
+const AdditionalInfoWrapper = styled.div`
+  flex-grow: 1;
+  flex-basis: 50%;
+  background-color: var(--color-white);
+  box-shadow: var(--elevation-2);
+  z-index: 5;
 `
 
 export const Resume = () => {
   return (
     <Wrapper>
       <Root>
-        <MainContent />
+        <MainContentWrapper>
+          <MainContent />
+        </MainContentWrapper>
 
-        <FillLeftSider />
+        <AdditionalInfoWrapper>
+          <AdditionalInfo />
+        </AdditionalInfoWrapper>
       </Root>
     </Wrapper>
   )

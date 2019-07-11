@@ -41,8 +41,6 @@ const Root = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  flex-grow: 1;
 `
 
 const BackgroundImage = styled.div`
