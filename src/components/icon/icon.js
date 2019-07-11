@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Github, Linkedin, Gmail } from './brands'
+import { Github, Linkedin, Gmail, Telegram } from './brands'
 
 const icons = {
   github: Github,
   linkedin: Linkedin,
-  gmail: Gmail
+  gmail: Gmail,
+  telegram: Telegram
 }
 
 export const Icon = ({ variant, ...iconProps }) => {
