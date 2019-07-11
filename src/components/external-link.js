@@ -1,11 +1,9 @@
 import React, { useMemo } from 'react'
 import { styled } from 'linaria/react'
-import { transparentize } from 'polished'
 
 import { externalLinkPropTypes } from 'src/common-prop-types'
 import { Icon } from 'src/components'
 import { isPhoneOrEmail } from 'src/helpers'
-import { theme } from 'src/theme'
 
 const Link = styled.a`
   position: relative;
@@ -21,14 +19,14 @@ const Link = styled.a`
     transition: all 0.2s ease-out;
 
     :nth-child(1) {
-      fill: ${transparentize(0.7, theme.colors.black)};
+      fill: var(--color-black-30);
     }
 
     :nth-child(2) {
       position: absolute;
       left: 0;
       top: 0;
-      fill: ${theme.colors.primary};
+      fill: var(--color-primary);
       opacity: 0;
     }
   }
@@ -42,7 +40,6 @@ const Link = styled.a`
     }
 
     :nth-child(2) {
-      fill: ${theme.colors.primary};
       opacity: 1;
       position: absolute;
       left: 0;
