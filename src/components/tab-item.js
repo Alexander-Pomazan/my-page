@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
