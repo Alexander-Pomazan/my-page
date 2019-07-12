@@ -107,7 +107,7 @@ export const TabItem = ({
   ])
 
   return (
-    <TabListItem key={tabName}>
+    <TabListItem>
       <Tab type="button" onClick={onSelect} role="tab" aria-selected={isActive}>
         <IconsWrapper>
           <Icon variant={iconVariant} role="presentation" />
