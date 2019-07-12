@@ -45,6 +45,7 @@ module.exports = {
   },
   "rules": {
     // general
+    "linebreak-style": ["error", "unix"],
     "no-console": "warn",
     "no-dupe-keys": "warn",
     "object-shorthand": "warn",
