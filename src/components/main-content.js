@@ -75,6 +75,8 @@ const Title = styled.h1`
 const Description = styled.p`
   font-size: 1.5rem;
   margin-bottom: 0.8rem;
+
+  color: var(--color-primary-);
 `
 
 export const MainContent = () => {

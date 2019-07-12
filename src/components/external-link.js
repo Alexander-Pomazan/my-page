@@ -16,17 +16,18 @@ const Link = styled.a`
   svg {
     height: 2rem;
     width: 2rem;
-    transition: all var(--transition-medium);
+    transition: opacity var(--transition-medium),
+      transform var(--transition-medium);
 
     :nth-child(1) {
-      fill: var(--color-black-30);
+      fill: var(--color-grey-400);
     }
 
     :nth-child(2) {
       position: absolute;
       left: 0;
       top: 0;
-      fill: var(--color-primary);
+      fill: var(--color-primary-light);
       opacity: 0;
     }
   }

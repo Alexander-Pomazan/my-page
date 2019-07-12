@@ -15,10 +15,10 @@ const IconsWrapper = styled.div`
 
   svg {
     transition: opacity var(--transition-medium);
-    fill: var(--color-black-40);
+    fill: var(--color-grey-400);
 
     :nth-child(2) {
-      fill: var(--color-primary);
+      fill: var(--color-primary-light);
       opacity: 0;
       position: absolute;
       left: 0;
@@ -34,7 +34,7 @@ const Tab = styled.button`
   position: relative;
   cursor: pointer;
 
-  background-color: var(--color-white);
+  background-color: var(--color-paper);
 
   border-radius: 50%;
   display: flex;
@@ -59,12 +59,12 @@ const Tab = styled.button`
   }
 
   :before {
-    box-shadow: var(--elevation-1);
+    box-shadow: var(--elevation-2);
     opacity: 1;
   }
 
   :after {
-    box-shadow: var(--elevation-3);
+    box-shadow: var(--elevation-5);
     opacity: 0;
   }
 

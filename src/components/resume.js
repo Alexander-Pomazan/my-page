@@ -23,7 +23,7 @@ const MainContentWrapper = styled.div`
   flex-grow: 1;
   flex-basis: 50%;
   background-color: var(--color-white);
-  box-shadow: var(--elevation-4);
+  box-shadow: var(--elevation-10);
   z-index: 10;
 `
 
@@ -31,7 +31,7 @@ const AdditionalInfoWrapper = styled.div`
   flex-grow: 1;
   flex-basis: 50%;
   background-color: var(--color-white);
-  box-shadow: var(--elevation-2);
+  box-shadow: var(--elevation-4);
   z-index: 5;
   position: relative;
 `
