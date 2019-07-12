@@ -90,7 +90,7 @@ export const MainContent = () => {
 
       <Description>Frontend developer</Description>
 
-      <nav>
+      <nav aria-label="Contacts and social media">
         <Links links={links} />
       </nav>
     </Root>

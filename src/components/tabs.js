@@ -17,7 +17,7 @@ const TabsList = styled.ul`
 
 export const Tabs = ({ onSelectTab, activeTabName, tabs }) => {
   return (
-    <Root>
+    <Root aria-label="Information tabs">
       <TabsList>
         {tabs.map(({ tabName, iconVariant, description }) => (
           <TabItem
