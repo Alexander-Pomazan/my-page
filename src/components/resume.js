@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { styled } from 'linaria/react'
 
-import { MainContent, AdditionalInfo } from 'src/components'
+import { MainContent, AdditionalInfo, Tabs } from 'src/components'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -33,9 +33,38 @@ const AdditionalInfoWrapper = styled.div`
   background-color: var(--color-white);
   box-shadow: var(--elevation-2);
   z-index: 5;
+  position: relative;
+`
+
+const tabNames = [
+  {
+    tabName: 'expertise',
+    iconVariant: 'expertise',
+    description: 'My expertise'
+  },
+  {
+    tabName: 'experience',
+    iconVariant: 'experience',
+    description: 'My experience'
+  },
+  {
+    tabName: 'about-me',
+    iconVariant: 'about-me',
+    description: 'About me'
+  }
+]
+
+const tabs = Object.values(tabNames)
+
+const TabsWrapper = styled.div`
+  position: absolute;
+  bottom: calc(100% + 1.5rem);
+  left: 1rem;
 `
 
 export const Resume = () => {
+  const [activeTabName, setActiveTab] = useState(tabs[0].tabName)
+
   return (
     <Wrapper>
       <Root>
@@ -44,6 +73,13 @@ export const Resume = () => {
         </MainContentWrapper>
 
         <AdditionalInfoWrapper>
+          <TabsWrapper>
+            <Tabs
+              tabs={tabs}
+              activeTabName={activeTabName}
+              onSelectTab={setActiveTab}
+            />
+          </TabsWrapper>
           <AdditionalInfo />
         </AdditionalInfoWrapper>
       </Root>

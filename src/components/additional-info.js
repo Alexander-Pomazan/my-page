@@ -1,10 +1,6 @@
 import React from 'react'
 import { styled } from 'linaria/react'
 
-import { Tabs } from 'src/components'
-
-const tabs = ['Experience', '']
-
 const Root = styled.section`
   display: flex;
   flex-direction: column;
@@ -12,9 +8,5 @@ const Root = styled.section`
 `
 
 export const AdditionalInfo = () => {
-  return (
-    <Root>
-      <Tabs />
-    </Root>
-  )
+  return <Root>additional info</Root>
 }

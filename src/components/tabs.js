@@ -2,32 +2,32 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
+import { tabPropType } from 'src/common-prop-types'
+import { TabItem } from 'src/components'
+
 const Root = styled.nav``
 
 const TabsList = styled.ul`
   display: flex;
+
+  > *:not(:last-child) {
+    margin-right: 1.5rem;
+  }
 `
 
-const TabListItem = styled.li`
-  flex-grow: 1;
-`
-
-const Tab = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  border: 1px solid blue;
-`
-
-export const Tabs = ({ onSelectTab, activeTab, tabs }) => {
+export const Tabs = ({ onSelectTab, activeTabName, tabs }) => {
   return (
     <Root>
       <TabsList>
-        {tabs.map((tab) => (
-          <TabListItem key={tab}>
-            <Tab>1</Tab>
-          </TabListItem>
+        {tabs.map(({ tabName, iconVariant, description }) => (
+          <TabItem
+            key={tabName}
+            isActive={tabName === activeTabName}
+            tabName={tabName}
+            iconVariant={iconVariant}
+            description={description}
+            onSelectTab={onSelectTab}
+          />
         ))}
       </TabsList>
     </Root>
@@ -36,6 +36,6 @@ export const Tabs = ({ onSelectTab, activeTab, tabs }) => {
 
 Tabs.propTypes = {
   onSelectTab: PropTypes.func.isRequired,
-  activeTab: PropTypes.string.isRequired,
-  tabs: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  activeTabName: PropTypes.string.isRequired,
+  tabs: PropTypes.arrayOf(tabPropType).isRequired
 }

@@ -5,3 +5,9 @@ export const externalLinkPropTypes = {
   iconVariant: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
 }
+
+export const tabPropType = PropTypes.shape({
+  tabName: PropTypes.string.isRequired,
+  iconVariant: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+}).isRequired

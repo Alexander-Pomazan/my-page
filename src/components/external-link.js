@@ -16,7 +16,7 @@ const Link = styled.a`
   svg {
     height: 2rem;
     width: 2rem;
-    transition: all 0.2s ease-out;
+    transition: all var(--transition-medium);
 
     :nth-child(1) {
       fill: var(--color-black-30);
@@ -41,9 +41,6 @@ const Link = styled.a`
 
     :nth-child(2) {
       opacity: 1;
-      position: absolute;
-      left: 0;
-      top: 0;
     }
   }
 `
