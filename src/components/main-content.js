@@ -70,13 +70,15 @@ const Avatar = styled.img`
 const Title = styled.h1`
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
 `
 
 const Description = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 0.8rem;
-
-  color: var(--color-primary-);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 `
 
 export const MainContent = () => {

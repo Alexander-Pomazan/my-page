@@ -22,7 +22,7 @@ const Root = styled.div`
 const MainContentWrapper = styled.div`
   flex-grow: 1;
   flex-basis: 50%;
-  background-color: var(--color-white);
+  background-color: var(--color-paper);
   box-shadow: var(--elevation-10);
   z-index: 10;
 `
@@ -30,7 +30,7 @@ const MainContentWrapper = styled.div`
 const AdditionalInfoWrapper = styled.div`
   flex-grow: 1;
   flex-basis: 50%;
-  background-color: var(--color-white);
+  background-color: var(--color-paper);
   box-shadow: var(--elevation-4);
   z-index: 5;
   position: relative;
@@ -80,7 +80,7 @@ export const Resume = () => {
               onSelectTab={setActiveTab}
             />
           </TabsWrapper>
-          <AdditionalInfo />
+          <AdditionalInfo activeTabName={activeTabName} />
         </AdditionalInfoWrapper>
       </Root>
     </Wrapper>

@@ -9,6 +9,8 @@ import './global.css'
 const Root = styled.div`
   width: 100vw;
   height: 100vh;
+
+  color: var(--color-text-primary);
 `
 
 export const Layout = ({ children }) => {
