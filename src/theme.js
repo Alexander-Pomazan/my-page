@@ -33,12 +33,12 @@ export const defaultColors = css`
   --color-primary-light: #7986cb;
   --color-primary-main: #3f51b5;
   --color-primary-dark: #303f9f;
-  --color-primary-contrastText: #fff;
+  --color-primary-contrast-text: #fff;
 
   --color-secondary-light: #ff4081;
   --color-secondary-main: #f50057;
   --color-secondary-dark: #c51162;
-  --color-secondary-contrastText: #fff;
+  --color-secondary-contrast-text: #fff;
 
   --color-error-light: #e57373;
   --color-error-main: #f44336;

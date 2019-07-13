@@ -1,6 +1,8 @@
 import React from 'react'
 import { styled } from 'linaria/react'
 
+import { Icon } from 'src/components'
+
 const Root = styled.section``
 
 const Title = styled.h2`
@@ -23,8 +25,50 @@ const List = styled.ul`
   flex-wrap: wrap;
 `
 
-const Chips = styled.li`
-  padding: 0.5rem;
+const Chip = styled.li`
+  margin: 0.2rem;
+
+  height: 2rem;
+  border-radius: 1.5rem;
+
+  color: var(--color-text-primary);
+  cursor: default;
+  display: inline-flex;
+
+  min-width: 3rem;
+  font-size: 0.8125rem;
+
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  justify-content: center;
+
+  border: 1px solid var(--technology-color);
+  background-color: transparent;
+`
+
+const ChipsIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 100%;
+  width: 2rem;
+  align-self: flex-start;
+  background-color: var(--technology-color);
+  margin-left: -1px;
+
+  svg {
+    height: 65%;
+    width: 65%;
+  }
+`
+
+const ChipsText = styled.span`
+  color: var(--technology-color);
+  font-weight: 500;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
 `
 
 export const Expertise = () => (
@@ -35,43 +79,48 @@ export const Expertise = () => (
     <section>
       <SectionTitle>Fundamentals</SectionTitle>
       <List>
-        <Chips>HTML</Chips>
-        <Chips>CSS</Chips>
-        <Chips>JavaScript</Chips>
+        <Chip style={{ '--technology-color': '#f16529' }}>
+          <ChipsIconWrapper>
+            <Icon variant="html-colored" />
+          </ChipsIconWrapper>
+          <ChipsText>HTML</ChipsText>
+        </Chip>
+        <Chip>CSS</Chip>
+        <Chip>JavaScript</Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>CSS methodologies and preprocessors</SectionTitle>
       <List>
-        <Chips>BEM</Chips>
-        <Chips>SCSS</Chips>
+        <Chip>BEM</Chip>
+        <Chip>SCSS</Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>SPA stuff</SectionTitle>
       <List>
-        <Chips>React</Chips>
-        <Chips>Redux</Chips>
-        <Chips>Apollo</Chips>
-        <Chips>Next.js</Chips>
+        <Chip>React</Chip>
+        <Chip>Redux</Chip>
+        <Chip>Apollo</Chip>
+        <Chip>Next.js</Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>Bundlers and task runners</SectionTitle>
       <List>
-        <Chips>Gulp</Chips>
-        <Chips>Webpack</Chips>
+        <Chip>Gulp</Chip>
+        <Chip>Webpack</Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>Languages that are not JavaScript</SectionTitle>
       <List>
-        <Chips>Typescript</Chips>
-        <Chips>English (B2)</Chips>
+        <Chip>Typescript</Chip>
+        <Chip>English (B2)</Chip>
       </List>
     </section>
   </Root>
