@@ -13,20 +13,17 @@ const Title = styled.h2`
 `
 
 const Header = styled.header`
-  margin-bottom: 1rem;
-`
-
-const SectionTitle = styled.h3`
-  color: var(--color-text-main);
+  margin-bottom: 2rem;
 `
 
 const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `
 
 const Chip = styled.li`
-  margin: 0.2rem;
+  margin: 0.4rem;
 
   :last-child {
     margin-right: 0;
@@ -65,11 +62,6 @@ const ChipsIconWrapper = styled.div`
   align-self: flex-start;
   background-color: var(--technology-color);
   margin-left: -1px;
-
-  svg {
-    height: 65%;
-    width: 65%;
-  }
 `
 
 const ChipsText = styled.span`
@@ -84,110 +76,92 @@ export const Expertise = () => (
     <Header>
       <Title>Technologies I know and use</Title>
     </Header>
+
     <section>
-      <SectionTitle>Fundamentals</SectionTitle>
       <List>
         <Chip style={{ '--technology-color': 'rgba(227, 79, 38, 0.8)' }}>
           <ChipsIconWrapper>
-            <Icon variant="html-colored" />
+            <Icon height="65%" width="65%" variant="html-colored" />
           </ChipsIconWrapper>
           <ChipsText>HTML</ChipsText>
         </Chip>
+
         <Chip style={{ '--technology-color': 'rgba(12, 115, 184, 0.8)' }}>
           <ChipsIconWrapper>
-            <Icon variant="css-colored" />
+            <Icon height="65%" width="65%" variant="css-colored" />
           </ChipsIconWrapper>
           <ChipsText>CSS</ChipsText>
         </Chip>
+
         <Chip style={{ '--technology-color': 'rgba(229, 162, 40, 0.8)' }}>
           <ChipsIconWrapper>
-            <Icon variant="javascript-colored" />
+            <Icon height="65%" width="65%" variant="javascript-colored" />
           </ChipsIconWrapper>
           <ChipsText>JavaScript</ChipsText>
         </Chip>
-      </List>
-    </section>
 
-    <section>
-      <SectionTitle>CSS methodologies and preprocessors</SectionTitle>
-      <List>
         <Chip style={{ '--technology-color': 'rgba(1, 1, 1, 0.4)' }}>
           <ChipsIconWrapper>
-            <Icon variant="bem" />
+            <Icon height="65%" width="65%" variant="bem" />
           </ChipsIconWrapper>
           <ChipsText>BEM</ChipsText>
         </Chip>
 
         <Chip style={{ '--technology-color': 'rgba(207, 100, 154, 0.5)' }}>
           <ChipsIconWrapper>
-            <Icon variant="sass" />
+            <Icon height="65%" width="65%" variant="sass" />
           </ChipsIconWrapper>
           <ChipsText>SASS</ChipsText>
         </Chip>
-      </List>
-    </section>
 
-    <section>
-      <SectionTitle>SPA stuff</SectionTitle>
-      <List>
         <Chip style={{ '--technology-color': 'rgba(118,74,188, 0.5)' }}>
           <ChipsIconWrapper>
-            <Icon variant="redux" />
+            <Icon height="65%" width="65%" variant="redux" />
           </ChipsIconWrapper>
           <ChipsText>Redux</ChipsText>
         </Chip>
 
         <Chip style={{ '--technology-color': 'rgba(32,35,42, 0.9)' }}>
           <ChipsIconWrapper>
-            <Icon variant="react" />
+            <Icon height="65%" width="65%" variant="react" />
           </ChipsIconWrapper>
           <ChipsText>React</ChipsText>
         </Chip>
 
         <Chip style={{ '--technology-color': 'rgba(51,51,51, 0.3)' }}>
           <ChipsIconWrapper>
-            <Icon variant="apollo" />
+            <Icon height="65%" width="65%" variant="apollo" />
           </ChipsIconWrapper>
           <ChipsText>Apollo</ChipsText>
         </Chip>
+
         <Chip style={{ '--technology-color': 'rgba(0,0,0, 0.2)' }}>
           <ChipsIconWrapper>
-            <Icon variant="next" />
+            <Icon height="65%" width="65%" variant="next" />
           </ChipsIconWrapper>
           <ChipsText>Next</ChipsText>
         </Chip>
-      </List>
-    </section>
 
-    <section>
-      <SectionTitle>Bundlers and task runners</SectionTitle>
-      <List>
         <Chip style={{ '--technology-color': 'rgb(218, 70, 72)' }}>
           <ChipsIconWrapper>
-            <Icon variant="gulp" />
+            <Icon height="65%" width="65%" variant="gulp" />
           </ChipsIconWrapper>
           <ChipsText>Gulp</ChipsText>
         </Chip>
 
         <Chip style={{ '--technology-color': 'rgb(142,214,251)' }}>
           <ChipsIconWrapper>
-            <Icon variant="webpack" />
+            <Icon height="65%" width="65%" variant="webpack" />
           </ChipsIconWrapper>
           <ChipsText>Webpack</ChipsText>
         </Chip>
-      </List>
-    </section>
 
-    <section>
-      <SectionTitle>Languages that are not JavaScript</SectionTitle>
-      <List>
-        <Chip style={{ '--technology-color': 'rgba(0,122,204, 0.2)' }}>
+        <Chip style={{ '--technology-color': 'rgba(0,122,204, 0.5)' }}>
           <ChipsIconWrapper>
-            <Icon height="1rem" variant="typescript" />
+            <Icon height="55%" width="55%" variant="typescript" />
           </ChipsIconWrapper>
           <ChipsText>Typecript</ChipsText>
         </Chip>
-        <Chip>English (B2)</Chip>
       </List>
     </section>
   </Root>
