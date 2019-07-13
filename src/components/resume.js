@@ -63,7 +63,7 @@ const TabsWrapper = styled.div`
 `
 
 export const Resume = () => {
-  const [activeTabName, setActiveTab] = useState(tabs[0].tabName)
+  const [activeTabName, setActiveTab] = useState(tabs[1].tabName)
 
   return (
     <Wrapper>

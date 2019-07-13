@@ -48,7 +48,7 @@ export const defaultColors = css`
   --color-text-primary: rgba(0, 0, 0, 0.87);
   --color-text-secondary: rgba(0, 0, 0, 0.54);
   --color-text-disabled: rgba(0, 0, 0, 0.38);
-  --color-text-hint: rgba(0, 0, 0, 0.38);
+  --color-text-hint: rgba(0, 0, 0, 0.45);
 
   --color-paper: #fff;
   --color-default: #fafafa;
@@ -71,6 +71,28 @@ export const defaultColors = css`
 
 export const transitions = css`
   --transition-medium: 0.2s ease-out;
+`
+
+export const appearAnimation = css`
+  animation-name: appear;
+  animation-fill-mode: forwards;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-delay: var(--appear-animation-delay);
+
+  opacity: 0;
+  transform: translateX(-1rem);
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateX(-1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 `
 
 export const theme = `
