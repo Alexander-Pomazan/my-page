@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { SEO, Layout, Resume } from 'src/components'
+import { SEO, Layout, CardsRoot } from 'src/components'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Resume />
+    <CardsRoot />
   </Layout>
 )
 

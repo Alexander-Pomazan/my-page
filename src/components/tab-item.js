@@ -111,6 +111,7 @@ export const TabItem = ({
       <Tab
         type="button"
         onClick={onSelect}
+        onFocus={onSelect}
         role="tab"
         aria-label={description}
         aria-selected={isActive}

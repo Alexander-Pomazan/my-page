@@ -53,7 +53,7 @@ const ChipsIconWrapper = styled.div`
 `
 
 const ChipsText = styled.span`
-  color: var(--technology-color);
+  color: var(--contrast-text-color);
   font-weight: 500;
   padding-left: 0.4rem;
   padding-right: 0.8rem;
@@ -61,76 +61,88 @@ const ChipsText = styled.span`
 
 const skills = [
   {
-    technologyColor: 'rgba(227, 79, 38, 0.8)',
+    technologyColor: 'rgba(227, 79, 38, 1)',
     iconSize: '65%',
     iconVariant: 'html-colored',
-    skillName: 'HTML'
+    skillName: 'HTML',
+    contrastTextColor: '#C74F00'
   },
   {
     technologyColor: 'rgba(12, 115, 184, 0.8)',
     iconSize: '65%',
     iconVariant: 'css-colored',
-    skillName: 'CSS'
+    skillName: 'CSS',
+    contrastTextColor: '#0C78C0'
   },
   {
     technologyColor: 'rgba(229, 162, 40, 0.8)',
     iconSize: '65%',
     iconVariant: 'javascript-colored',
-    skillName: 'JavaScript'
+    skillName: 'JavaScript',
+    contrastTextColor: '#976911'
   },
   {
     technologyColor: 'rgba(1, 1, 1, 0.4)',
     iconSize: '65%',
     iconVariant: 'bem',
-    skillName: 'BEM'
+    skillName: 'BEM',
+    contrastTextColor: '#010101'
   },
   {
     technologyColor: 'rgba(207, 100, 154, 0.5)',
     iconSize: '65%',
     iconVariant: 'sass',
-    skillName: 'SASS'
+    skillName: 'SASS',
+    contrastTextColor: '#C63E7E'
   },
   {
     technologyColor: 'rgba(118,74,188, 0.5)',
     iconSize: '65%',
     iconVariant: 'redux',
-    skillName: 'Redux'
+    skillName: 'Redux',
+    contrastTextColor: '#7E54BF'
   },
   {
     technologyColor: 'rgba(32,35,42, 0.9)',
     iconSize: '65%',
     iconVariant: 'react',
-    skillName: 'React'
+    skillName: 'React',
+    contrastTextColor: '#20232A'
   },
   {
     technologyColor: 'rgba(51,51,51, 0.3)',
     iconSize: '65%',
     iconVariant: 'apollo',
-    skillName: 'Apollo'
+    skillName: 'Apollo',
+    contrastTextColor: '#666666'
   },
   {
     technologyColor: 'rgba(0,0,0, 0.4)',
     iconSize: '65%',
     iconVariant: 'next',
-    skillName: 'Next'
+    skillName: 'Next',
+    contrastTextColor: '#666666'
   },
   {
     technologyColor: 'rgb(218, 70, 72)',
     iconSize: '65%',
     iconVariant: 'gulp',
-    skillName: 'Gulp'
+    skillName: 'Gulp',
+    contrastTextColor: '#D52F31'
   },
   {
     technologyColor: 'rgb(142,214,251)',
     iconSize: '65%',
     iconVariant: 'webpack',
-    skillName: 'Webpack'
+    skillName: 'Webpack',
+    contrastTextColor: '#0475B4'
   },
   {
     technologyColor: 'rgba(0,122,204, 0.5)',
     iconSize: '55%',
     iconVariant: 'typescript',
-    skillName: 'Typecript'
+    skillName: 'Typecript',
+    contrastTextColor: '#0074C2'
   }
 ]
 
@@ -143,6 +155,7 @@ export const Expertise = () => (
         <Chip
           key={skill.skillName}
           style={{
+            '--contrast-text-color': skill.contrastTextColor,
             '--technology-color': skill.technologyColor,
             '--appear-animation-delay': `${index * 20}ms`
           }}

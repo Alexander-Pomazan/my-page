@@ -62,8 +62,8 @@ const TabsWrapper = styled.div`
   left: 1rem;
 `
 
-export const Resume = () => {
-  const [activeTabName, setActiveTab] = useState(tabs[2].tabName)
+export const CardsRoot = () => {
+  const [activeTabName, setActiveTab] = useState(tabs[0].tabName)
 
   return (
     <Wrapper>

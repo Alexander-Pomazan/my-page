@@ -1,6 +1,6 @@
 export { SEO } from './seo'
 export { Layout } from './layout'
-export { Resume } from './resume'
+export { CardsRoot } from './cards-root'
 export { Links } from './links'
 export { Icon } from './icon/'
 export { ExternalLink } from './external-link'
