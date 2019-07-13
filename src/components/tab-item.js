@@ -108,7 +108,13 @@ export const TabItem = ({
 
   return (
     <TabListItem>
-      <Tab type="button" onClick={onSelect} role="tab" aria-selected={isActive}>
+      <Tab
+        type="button"
+        onClick={onSelect}
+        role="tab"
+        aria-label={description}
+        aria-selected={isActive}
+      >
         <IconsWrapper>
           <Icon variant={iconVariant} role="presentation" />
           <Icon variant={iconVariant} aria-hidden />

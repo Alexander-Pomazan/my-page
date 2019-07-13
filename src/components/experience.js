@@ -5,7 +5,7 @@ import { TabHeader } from 'src/components'
 import { appearAnimation } from 'src/theme'
 
 const JetRuby = styled.a`
-  color: #ff6600;
+  color: #e35f07;
 `
 
 const WorkDate = styled.span`
@@ -24,7 +24,8 @@ const CompanyName = styled.h3`
 const ExperienceDescription = styled.p`
   margin-left: 1rem;
   margin-bottom: 0.6rem;
-
+  font-size: 0.92rem;
+  letter-spacing: 0.02rem;
   text-indent: 0.8rem;
 `
 
@@ -66,7 +67,8 @@ export const Experience = () => {
             <ExperienceDescription
               className={appearAnimation}
               style={{
-                '--appear-animation-delay': `${appearAnimationDelayBase * 3}ms`
+                '--appear-animation-delay': `${appearAnimationDelayBase *
+                  3.5}ms`
               }}
             >
               After some time I got enough skill and developed several projects
