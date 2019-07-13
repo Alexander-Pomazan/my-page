@@ -8,10 +8,11 @@ const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2rem;
 `
 
 const Chip = styled.li`
-  margin: 0.4rem;
+  margin: 0.6rem;
 
   :last-child {
     margin-right: 0;

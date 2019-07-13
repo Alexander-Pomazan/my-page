@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
-import { Expertise, Experience } from 'src/components'
+import { Expertise, Experience, AboutMe } from 'src/components'
 
 const Root = styled.div`
   display: flex;
   flex-direction: column;
-  height: 16rem;
-  padding-top: 2rem;
+  height: 18rem;
+  padding-top: 1.5rem;
   padding-bottom: 2rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -19,6 +19,7 @@ export const AdditionalInfo = ({ activeTabName }) => {
     <Root>
       {activeTabName === 'expertise' && <Expertise />}
       {activeTabName === 'experience' && <Experience />}
+      {activeTabName === 'about-me' && <AboutMe />}
     </Root>
   )
 }

@@ -63,7 +63,7 @@ const TabsWrapper = styled.div`
 `
 
 export const Resume = () => {
-  const [activeTabName, setActiveTab] = useState(tabs[1].tabName)
+  const [activeTabName, setActiveTab] = useState(tabs[2].tabName)
 
   return (
     <Wrapper>
@@ -80,6 +80,7 @@ export const Resume = () => {
               onSelectTab={setActiveTab}
             />
           </TabsWrapper>
+
           <AdditionalInfo activeTabName={activeTabName} />
         </AdditionalInfoWrapper>
       </Root>

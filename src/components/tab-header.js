@@ -12,7 +12,7 @@ const Title = styled.h2`
 `
 
 const Header = styled.header`
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 `
 
 export const TabHeader = ({ children }) => (

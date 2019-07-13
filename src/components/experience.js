@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from 'linaria/react'
 
-import { TabHeader } from 'src/components'
+import { TabHeader, Paragraph } from 'src/components'
 import { appearAnimation } from 'src/theme'
 
 const JetRuby = styled.a`
@@ -18,17 +18,8 @@ const WorkDate = styled.span`
 
 const CompanyName = styled.h3`
   font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 `
-
-const ExperienceDescription = styled.p`
-  margin-left: 1rem;
-  margin-bottom: 0.6rem;
-  font-size: 0.92rem;
-  letter-spacing: 0.02rem;
-  text-indent: 0.8rem;
-`
-
 const appearAnimationDelayBase = 20
 
 export const Experience = () => {
@@ -52,7 +43,7 @@ export const Experience = () => {
               </WorkDate>
             </CompanyName>
 
-            <ExperienceDescription
+            <Paragraph
               className={appearAnimation}
               style={{
                 '--appear-animation-delay': `${appearAnimationDelayBase * 3}ms`
@@ -62,9 +53,9 @@ export const Experience = () => {
               with. Since my first day here I was working a team of brilliant
               engineers and helped them develop large and complex React
               SPA&apos;s.
-            </ExperienceDescription>
+            </Paragraph>
 
-            <ExperienceDescription
+            <Paragraph
               className={appearAnimation}
               style={{
                 '--appear-animation-delay': `${appearAnimationDelayBase *
@@ -75,7 +66,7 @@ export const Experience = () => {
               on my own. For the most part these projects were SaaS apps with
               complex logic and rich functionality (editors, interactive chart
               dashboards).
-            </ExperienceDescription>
+            </Paragraph>
           </article>
         </li>
       </ul>
