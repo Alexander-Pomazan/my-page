@@ -37,7 +37,7 @@ export const Experience = () => {
                 '--appear-animation-delay': `${appearAnimationDelayBase * 2}ms`
               }}
             >
-              <JetRuby>JetRuby agency</JetRuby>
+              <JetRuby>JetRuby Agency</JetRuby>
               <WorkDate>
                 <time dateTime="2018-07">July 2018</time> -{' '}
                 <time dateTime={new Date()}>Current time</time>
@@ -51,9 +51,9 @@ export const Experience = () => {
               }}
             >
               Right now JetRuby agency is the first and only company I worked
-              with. Since my first day here I was working a team of brilliant
-              engineers and helped them develop large and complex React
-              SPA&apos;s.
+              with. Since my first day here I was working with a team of
+              brilliant engineers and helped them develop large and complex
+              React SPA&apos;s.
             </Paragraph>
 
             <Paragraph
