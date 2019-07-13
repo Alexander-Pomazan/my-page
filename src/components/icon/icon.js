@@ -10,7 +10,10 @@ import {
   Bem,
   Sass,
   Redux,
-  ReactLogo
+  ReactLogo,
+  Apollo,
+  Next,
+  Gulp
 } from './technologies'
 
 const icons = {
@@ -27,7 +30,10 @@ const icons = {
   bem: Bem,
   sass: Sass,
   redux: Redux,
-  react: ReactLogo
+  react: ReactLogo,
+  apollo: Apollo,
+  next: Next,
+  gulp: Gulp
 }
 
 export const Icon = ({ variant, ...iconProps }) => {

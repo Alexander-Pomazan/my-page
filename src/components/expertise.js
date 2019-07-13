@@ -28,6 +28,14 @@ const List = styled.ul`
 const Chip = styled.li`
   margin: 0.2rem;
 
+  :last-child {
+    margin-right: 0;
+  }
+
+  :first-child {
+    margin-left: 0;
+  }
+
   height: 2rem;
   border-radius: 1.5rem;
 
@@ -95,7 +103,7 @@ export const Expertise = () => (
           <ChipsIconWrapper>
             <Icon variant="javascript-colored" />
           </ChipsIconWrapper>
-          <ChipsText>JS</ChipsText>
+          <ChipsText>JavaScript</ChipsText>
         </Chip>
       </List>
     </section>
@@ -126,24 +134,40 @@ export const Expertise = () => (
           <ChipsIconWrapper>
             <Icon variant="redux" />
           </ChipsIconWrapper>
-          <ChipsText>REDUX</ChipsText>
+          <ChipsText>Redux</ChipsText>
         </Chip>
 
         <Chip style={{ '--technology-color': 'rgb(32,35,42, 0.9)' }}>
           <ChipsIconWrapper>
             <Icon variant="react" />
           </ChipsIconWrapper>
-          <ChipsText>REACT</ChipsText>
+          <ChipsText>React</ChipsText>
         </Chip>
-        <Chip>Apollo</Chip>
-        <Chip>Next.js</Chip>
+
+        <Chip style={{ '--technology-color': 'rgb(51,51,51, 0.3)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="apollo" />
+          </ChipsIconWrapper>
+          <ChipsText>Apollo</ChipsText>
+        </Chip>
+        <Chip style={{ '--technology-color': 'rgb(0,0,0, 0.2)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="next" />
+          </ChipsIconWrapper>
+          <ChipsText>Next</ChipsText>
+        </Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>Bundlers and task runners</SectionTitle>
       <List>
-        <Chip>Gulp</Chip>
+        <Chip style={{ '--technology-color': 'rgb(218, 70, 72)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="gulp" />
+          </ChipsIconWrapper>
+          <ChipsText>Gulp</ChipsText>
+        </Chip>
         <Chip>Webpack</Chip>
       </List>
     </section>
