@@ -3,7 +3,15 @@ import PropTypes from 'prop-types'
 
 import { Github, Linkedin, Gmail, Telegram } from './brands'
 import { Expertise, Experience, AboutMe } from './rest'
-import { HtmlColored } from './technologies'
+import {
+  HtmlColored,
+  CssColored,
+  JavascriptColored,
+  Bem,
+  Sass,
+  Redux,
+  ReactLogo
+} from './technologies'
 
 const icons = {
   github: Github,
@@ -13,7 +21,13 @@ const icons = {
   expertise: Expertise,
   experience: Experience,
   'about-me': AboutMe,
-  'html-colored': HtmlColored
+  'html-colored': HtmlColored,
+  'css-colored': CssColored,
+  'javascript-colored': JavascriptColored,
+  bem: Bem,
+  sass: Sass,
+  redux: Redux,
+  react: ReactLogo
 }
 
 export const Icon = ({ variant, ...iconProps }) => {

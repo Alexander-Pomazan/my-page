@@ -68,7 +68,7 @@ const ChipsText = styled.span`
   color: var(--technology-color);
   font-weight: 500;
   padding-left: 0.4rem;
-  padding-right: 0.4rem;
+  padding-right: 0.8rem;
 `
 
 export const Expertise = () => (
@@ -79,30 +79,62 @@ export const Expertise = () => (
     <section>
       <SectionTitle>Fundamentals</SectionTitle>
       <List>
-        <Chip style={{ '--technology-color': '#f16529' }}>
+        <Chip style={{ '--technology-color': 'rgba(227, 79, 38, 0.8)' }}>
           <ChipsIconWrapper>
             <Icon variant="html-colored" />
           </ChipsIconWrapper>
           <ChipsText>HTML</ChipsText>
         </Chip>
-        <Chip>CSS</Chip>
-        <Chip>JavaScript</Chip>
+        <Chip style={{ '--technology-color': 'rgba(12, 115, 184, 0.8)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="css-colored" />
+          </ChipsIconWrapper>
+          <ChipsText>CSS</ChipsText>
+        </Chip>
+        <Chip style={{ '--technology-color': 'rgba(229, 162, 40, 0.8)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="javascript-colored" />
+          </ChipsIconWrapper>
+          <ChipsText>JS</ChipsText>
+        </Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>CSS methodologies and preprocessors</SectionTitle>
       <List>
-        <Chip>BEM</Chip>
-        <Chip>SCSS</Chip>
+        <Chip style={{ '--technology-color': 'rgb(1, 1, 1, 0.4)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="bem" />
+          </ChipsIconWrapper>
+          <ChipsText>BEM</ChipsText>
+        </Chip>
+
+        <Chip style={{ '--technology-color': 'rgb(207, 100, 154, 0.5)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="sass" />
+          </ChipsIconWrapper>
+          <ChipsText>SASS</ChipsText>
+        </Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>SPA stuff</SectionTitle>
       <List>
-        <Chip>React</Chip>
-        <Chip>Redux</Chip>
+        <Chip style={{ '--technology-color': 'rgb(118,74,188, 0.5)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="redux" />
+          </ChipsIconWrapper>
+          <ChipsText>REDUX</ChipsText>
+        </Chip>
+
+        <Chip style={{ '--technology-color': 'rgb(32,35,42, 0.9)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="react" />
+          </ChipsIconWrapper>
+          <ChipsText>REACT</ChipsText>
+        </Chip>
         <Chip>Apollo</Chip>
         <Chip>Next.js</Chip>
       </List>
