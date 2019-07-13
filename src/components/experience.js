@@ -20,7 +20,8 @@ const CompanyName = styled.h3`
   font-size: 1.2rem;
   margin-bottom: 1rem;
 `
-const appearAnimationDelayBase = 20
+
+const appearAnimationDelayBase = 45
 
 export const Experience = () => {
   return (
