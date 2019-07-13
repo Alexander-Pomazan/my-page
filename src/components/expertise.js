@@ -111,14 +111,14 @@ export const Expertise = () => (
     <section>
       <SectionTitle>CSS methodologies and preprocessors</SectionTitle>
       <List>
-        <Chip style={{ '--technology-color': 'rgb(1, 1, 1, 0.4)' }}>
+        <Chip style={{ '--technology-color': 'rgba(1, 1, 1, 0.4)' }}>
           <ChipsIconWrapper>
             <Icon variant="bem" />
           </ChipsIconWrapper>
           <ChipsText>BEM</ChipsText>
         </Chip>
 
-        <Chip style={{ '--technology-color': 'rgb(207, 100, 154, 0.5)' }}>
+        <Chip style={{ '--technology-color': 'rgba(207, 100, 154, 0.5)' }}>
           <ChipsIconWrapper>
             <Icon variant="sass" />
           </ChipsIconWrapper>
@@ -130,27 +130,27 @@ export const Expertise = () => (
     <section>
       <SectionTitle>SPA stuff</SectionTitle>
       <List>
-        <Chip style={{ '--technology-color': 'rgb(118,74,188, 0.5)' }}>
+        <Chip style={{ '--technology-color': 'rgba(118,74,188, 0.5)' }}>
           <ChipsIconWrapper>
             <Icon variant="redux" />
           </ChipsIconWrapper>
           <ChipsText>Redux</ChipsText>
         </Chip>
 
-        <Chip style={{ '--technology-color': 'rgb(32,35,42, 0.9)' }}>
+        <Chip style={{ '--technology-color': 'rgba(32,35,42, 0.9)' }}>
           <ChipsIconWrapper>
             <Icon variant="react" />
           </ChipsIconWrapper>
           <ChipsText>React</ChipsText>
         </Chip>
 
-        <Chip style={{ '--technology-color': 'rgb(51,51,51, 0.3)' }}>
+        <Chip style={{ '--technology-color': 'rgba(51,51,51, 0.3)' }}>
           <ChipsIconWrapper>
             <Icon variant="apollo" />
           </ChipsIconWrapper>
           <ChipsText>Apollo</ChipsText>
         </Chip>
-        <Chip style={{ '--technology-color': 'rgb(0,0,0, 0.2)' }}>
+        <Chip style={{ '--technology-color': 'rgba(0,0,0, 0.2)' }}>
           <ChipsIconWrapper>
             <Icon variant="next" />
           </ChipsIconWrapper>
@@ -168,14 +168,25 @@ export const Expertise = () => (
           </ChipsIconWrapper>
           <ChipsText>Gulp</ChipsText>
         </Chip>
-        <Chip>Webpack</Chip>
+
+        <Chip style={{ '--technology-color': 'rgb(142,214,251)' }}>
+          <ChipsIconWrapper>
+            <Icon variant="webpack" />
+          </ChipsIconWrapper>
+          <ChipsText>Webpack</ChipsText>
+        </Chip>
       </List>
     </section>
 
     <section>
       <SectionTitle>Languages that are not JavaScript</SectionTitle>
       <List>
-        <Chip>Typescript</Chip>
+        <Chip style={{ '--technology-color': 'rgba(0,122,204, 0.2)' }}>
+          <ChipsIconWrapper>
+            <Icon height="1rem" variant="typescript" />
+          </ChipsIconWrapper>
+          <ChipsText>Typecript</ChipsText>
+        </Chip>
         <Chip>English (B2)</Chip>
       </List>
     </section>

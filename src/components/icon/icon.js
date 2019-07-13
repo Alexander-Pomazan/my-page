@@ -13,7 +13,9 @@ import {
   ReactLogo,
   Apollo,
   Next,
-  Gulp
+  Gulp,
+  Webpack,
+  Typescript
 } from './technologies'
 
 const icons = {
@@ -33,7 +35,9 @@ const icons = {
   react: ReactLogo,
   apollo: Apollo,
   next: Next,
-  gulp: Gulp
+  gulp: Gulp,
+  webpack: Webpack,
+  typescript: Typescript
 }
 
 export const Icon = ({ variant, ...iconProps }) => {
