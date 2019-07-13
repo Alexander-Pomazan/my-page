@@ -71,7 +71,7 @@ export const Experience = () => {
             >
               After some time I got enough skill and developed several projects
               on my own. For the most part these projects were SaaS apps with
-              complex  logic and rich functionality (editors, interactive chart
+              complex logic and rich functionality (editors, interactive chart
               dashboards).
             </ExperienceDescription>
           </article>
