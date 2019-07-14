@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { TabHeader, Paragraph } from 'src/components'
-import { appearAnimation } from 'src/theme'
+import { appearAnimation } from 'src/animations'
 
 const appearAnimationDelayBase = 80
 

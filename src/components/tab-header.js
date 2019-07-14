@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
-import { appearAnimation } from 'src/theme'
+import { appearAnimation } from 'src/animations'
 
 const Title = styled.h2`
   color: var(--color-text-primary);

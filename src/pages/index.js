@@ -1,5 +1,8 @@
 import React from 'react'
 
+import 'reset-css'
+import '../global.css'
+
 import { SEO, Layout, CardsRoot } from 'src/components'
 
 const IndexPage = () => (

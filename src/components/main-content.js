@@ -69,7 +69,7 @@ const Avatar = styled.img`
 
 const Title = styled.h1`
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--color-text-primary);
   text-align: center;
 `
@@ -77,7 +77,7 @@ const Title = styled.h1`
 const Description = styled.p`
   font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--color-text-secondary);

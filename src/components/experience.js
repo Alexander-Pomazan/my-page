@@ -2,7 +2,7 @@ import React from 'react'
 import { styled } from 'linaria/react'
 
 import { TabHeader, Paragraph } from 'src/components'
-import { appearAnimation } from 'src/theme'
+import { appearAnimation } from 'src/animations'
 
 const JetRuby = styled.a`
   color: #e35f07;

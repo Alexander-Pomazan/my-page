@@ -2,7 +2,7 @@ import React from 'react'
 import { styled } from 'linaria/react'
 
 import { Icon, TabHeader } from 'src/components'
-import { appearAnimation } from 'src/theme'
+import { appearAnimation } from 'src/animations'
 
 const List = styled.ul`
   display: flex;

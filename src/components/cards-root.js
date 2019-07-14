@@ -3,6 +3,8 @@ import { styled } from 'linaria/react'
 
 import { MainContent, AdditionalInfo, Tabs } from 'src/components'
 
+const cardsWrapBreakPoint = '700px'
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -15,8 +17,13 @@ const Root = styled.div`
   width: 100%;
   max-width: 50rem;
   height: 26rem;
+  max-height: 95%;
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: ${cardsWrapBreakPoint}) {
+    flex-direction: column;
+  }
 `
 
 const MainContentWrapper = styled.div`
