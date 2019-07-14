@@ -7,7 +7,6 @@ import { Expertise, Experience, AboutMe } from 'src/components'
 const Root = styled.div`
   display: flex;
   flex-direction: column;
-  height: 18rem;
   padding-top: 1.5rem;
   padding-bottom: 2rem;
   padding-left: 1.5rem;

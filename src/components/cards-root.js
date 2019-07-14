@@ -14,26 +14,30 @@ const Wrapper = styled.div`
 const Root = styled.div`
   width: 100%;
   max-width: 50rem;
-
+  height: 26rem;
   display: flex;
   align-items: center;
 `
 
 const MainContentWrapper = styled.div`
   flex-grow: 1;
-  flex-basis: 50%;
+  flex-shrink: 0;
   background-color: var(--color-paper);
   box-shadow: var(--elevation-10);
   z-index: 10;
+  height: 100%;
 `
 
 const AdditionalInfoWrapper = styled.div`
   flex-grow: 1;
+  flex-shrink: 0;
   flex-basis: 50%;
+
   background-color: var(--color-paper);
   box-shadow: var(--elevation-4);
   z-index: 5;
   position: relative;
+  height: 80%;
 `
 
 const tabNames = [
