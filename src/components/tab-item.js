@@ -115,8 +115,6 @@ export const TabItem = ({
     tabName
   ])
 
-  console.log(isRectangular)
-
   return (
     <TabListItem isRectangular={isRectangular}>
       <Tab
