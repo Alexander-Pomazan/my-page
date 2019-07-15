@@ -1,8 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
-import { TabHeader, Paragraph } from 'src/components'
-import { appearAnimation } from 'src/animations'
+import { TabHeader, Paragraph, FadeIn } from 'src/components'
+
+const Root = styled.section`
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+`
 
 const JetRuby = styled.a`
   color: #e35f07;
@@ -23,54 +28,59 @@ const CompanyName = styled.h3`
 
 const appearAnimationDelayBase = 45
 
-export const Experience = () => {
+export const Experience = ({ isActive }) => {
   return (
-    <section>
-      <TabHeader>Companies I worked with</TabHeader>
+    <Root>
+      <FadeIn isIn={isActive}>
+        <TabHeader>Companies I worked with</TabHeader>
+      </FadeIn>
 
       <ul>
         <li>
           <article>
-            <CompanyName
-              className={appearAnimation}
-              style={{
-                '--appear-animation-delay': `${appearAnimationDelayBase * 2}ms`
-              }}
+            <FadeIn
+              isIn={isActive}
+              animationDelay={`${appearAnimationDelayBase * 2}ms`}
             >
-              <JetRuby>JetRuby Agency</JetRuby>
-              <WorkDate>
-                <time dateTime="2018-07">July 2018</time> -{' '}
-                <time dateTime={new Date()}>Current time</time>
-              </WorkDate>
-            </CompanyName>
+              <CompanyName>
+                <JetRuby>JetRuby Agency</JetRuby>
+                <WorkDate>
+                  <time dateTime="2018-07">July 2018</time> -{' '}
+                  <time dateTime={new Date()}>Current time</time>
+                </WorkDate>
+              </CompanyName>
+            </FadeIn>
 
-            <Paragraph
-              className={appearAnimation}
-              style={{
-                '--appear-animation-delay': `${appearAnimationDelayBase * 3}ms`
-              }}
+            <FadeIn
+              isIn={isActive}
+              animationDelay={`${appearAnimationDelayBase * 3}ms`}
             >
-              Right now JetRuby agency is the first and only company I worked
-              with. Since my first day here I was working with a team of
-              brilliant engineers and helped them develop large and complex
-              React SPA&apos;s.
-            </Paragraph>
+              <Paragraph>
+                Right now JetRuby agency is the first and only company I worked
+                with. Since my first day here I was working with a team of
+                brilliant engineers and helped them develop large and complex
+                React SPA&apos;s.
+              </Paragraph>
+            </FadeIn>
 
-            <Paragraph
-              className={appearAnimation}
-              style={{
-                '--appear-animation-delay': `${appearAnimationDelayBase *
-                  3.5}ms`
-              }}
+            <FadeIn
+              isIn={isActive}
+              animationDelay={`${appearAnimationDelayBase * 3.5}ms`}
             >
-              After some time I got enough skill and developed several projects
-              on my own. For the most part these projects were SaaS apps with
-              complex logic and rich functionality (editors, interactive chart
-              dashboards).
-            </Paragraph>
+              <Paragraph>
+                After some time I got enough skill and developed several
+                projects on my own. For the most part these projects were SaaS
+                apps with complex logic and rich functionality (editors,
+                interactive chart dashboards).
+              </Paragraph>
+            </FadeIn>
           </article>
         </li>
       </ul>
-    </section>
+    </Root>
   )
+}
+
+Experience.propTypes = {
+  isActive: PropTypes.bool.isRequired
 }

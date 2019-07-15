@@ -89,10 +89,12 @@ const AdditionalInfoWrapper = styled.div`
   @media screen and (max-width: ${tabletBreakPoint}px) {
     height: auto;
     width: 75%;
+    flex-basis: auto;
   }
 
   @media screen and (max-width: ${phoneBreakPoint}px) {
     width: 100%;
+    flex-grow: 1;
   }
 `
 

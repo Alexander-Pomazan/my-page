@@ -1,8 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
-import { Icon, TabHeader } from 'src/components'
-import { appearAnimation } from 'src/animations'
+import { FadeIn, Icon, TabHeader } from 'src/components'
+
+const Root = styled.section`
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+`
 
 const List = styled.ul`
   display: flex;
@@ -146,32 +151,41 @@ const skills = [
   }
 ]
 
-export const Expertise = () => (
-  <section>
-    <TabHeader>Technologies I know and use</TabHeader>
+export const Expertise = ({ isActive }) => (
+  <Root>
+    <FadeIn isIn={isActive}>
+      <TabHeader>Technologies I know and use</TabHeader>
+    </FadeIn>
 
     <List>
       {skills.map((skill, index) => (
-        <Chip
+        <FadeIn
+          isIn={isActive}
+          animationDelay={`${index * 20}ms`}
           key={skill.skillName}
-          style={{
-            '--contrast-text-color': skill.contrastTextColor,
-            '--technology-color': skill.technologyColor,
-            '--appear-animation-delay': `${index * 20}ms`
-          }}
-          elementIndex={index}
-          className={appearAnimation}
         >
-          <ChipsIconWrapper>
-            <Icon
-              height={skill.iconSize}
-              width={skill.iconSize}
-              variant={skill.iconVariant}
-            />
-          </ChipsIconWrapper>
-          <ChipsText>{skill.skillName}</ChipsText>
-        </Chip>
+          <Chip
+            style={{
+              '--contrast-text-color': skill.contrastTextColor,
+              '--technology-color': skill.technologyColor
+            }}
+            elementIndex={index}
+          >
+            <ChipsIconWrapper>
+              <Icon
+                height={skill.iconSize}
+                width={skill.iconSize}
+                variant={skill.iconVariant}
+              />
+            </ChipsIconWrapper>
+            <ChipsText>{skill.skillName}</ChipsText>
+          </Chip>
+        </FadeIn>
       ))}
     </List>
-  </section>
+  </Root>
 )
+
+Expertise.propTypes = {
+  isActive: PropTypes.bool.isRequired
+}

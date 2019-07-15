@@ -8,41 +8,47 @@ const Root = styled.div`
   display: flex;
   padding-top: 1.5rem;
   padding-bottom: 2rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   overflow: hidden;
 `
 
 const VisuallyHidden = styled.div`
   opacity: ${(p) => (p.isHidden ? 0 : 1)};
-  position: relative;
-  left: ${(p) => (p.isHidden ? '100%' : 0)};
   width: 100%;
   flex-shrink: 0;
+  overflow: hidden;
+
+  transform: ${(p) => {
+    if (p.isHidden) return `translateX(${-100 * (p.index + 1)}%)`
+
+    return `translateX(${-100 * p.index}%)`
+  }};
 `
 
 export const AdditionalInfo = ({ activeTabName }) => {
   return (
     <Root>
       <VisuallyHidden
+        index={0}
         aria-hidden={activeTabName !== 'expertise'}
         isHidden={activeTabName !== 'expertise'}
       >
-        <Expertise />
+        <Expertise isActive={activeTabName === 'expertise'} />
       </VisuallyHidden>
 
       <VisuallyHidden
+        index={1}
         aria-hidden={activeTabName !== 'experience'}
         isHidden={activeTabName !== 'experience'}
       >
-        <Experience />
+        <Experience isActive={activeTabName === 'experience'} />
       </VisuallyHidden>
 
       <VisuallyHidden
+        index={2}
         aria-hidden={activeTabName !== 'about-me'}
         isHidden={activeTabName !== 'about-me'}
       >
-        <AboutMe />
+        <AboutMe isActive={activeTabName === 'about-me'} />
       </VisuallyHidden>
     </Root>
   )
