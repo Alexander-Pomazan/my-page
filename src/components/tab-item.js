@@ -104,7 +104,6 @@ const Tab = styled.button`
       opacity: 1;
     }
 
-    transform: scale(1.01);
     @media screen and (min-width: ${phoneBreakPoint}px) {
       transform: scale(1.05);
     }

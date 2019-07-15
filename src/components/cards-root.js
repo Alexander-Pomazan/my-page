@@ -28,19 +28,18 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  width: 100%;
   justify-content: flex-start;
+  align-items: flex-start;
 
   @media screen and (min-width: ${phoneBreakPoint}px) {
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 `
 
 const Root = styled.div`
   width: 100%;
-  max-height: 95%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
