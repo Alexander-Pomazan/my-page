@@ -7,6 +7,7 @@ import { FadeIn, Icon, TabHeader } from 'src/components'
 const Root = styled.section`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  height: 100%;
 `
 
 const List = styled.ul`
@@ -14,6 +15,7 @@ const List = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2rem;
+  flex-grow: 1;
 `
 
 const Chip = styled.li`
