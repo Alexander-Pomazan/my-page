@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
+import { tabletBreakPoint, phoneBreakPoint } from 'src/breakpoints'
 import { tabPropType } from 'src/common-prop-types'
 import { TabItem } from 'src/components'
 
@@ -9,35 +10,31 @@ const Root = styled.nav``
 
 const TabsList = styled.ul`
   display: flex;
-  flex-direction: ${(p) => p.direction};
+  flex-direction: row;
+  margin: 0;
 
-  > *:not(:last-child) {
-    margin-right: ${(p) =>
-      !p.isNoMargin && p.direction === 'row' ? '1.5rem' : 0};
-    margin-bottom: ${(p) =>
-      !p.isNoMargin && p.direction === 'column' ? '1.5rem' : 0};
+  @media screen and (min-width: ${phoneBreakPoint}px) {
+    flex-direction: column;
+    > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
   }
 
-  @media screen and (max-width: var(--breakpoint-tablet)) {
-    flex-direction: column;
-    margin-right: 0;
-    margin-bottom: 1.5rem;
+  @media screen and (min-width: ${tabletBreakPoint}px) {
+    flex-direction: row;
+    > *:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 1.5rem;
+    }
   }
 `
 
-export const Tabs = ({
-  onSelectTab,
-  activeTabName,
-  tabs,
-  isRectabgularTabs,
-  direction
-}) => {
+export const Tabs = ({ onSelectTab, activeTabName, tabs }) => {
   return (
     <Root aria-label="Information tabs" role="tablist">
-      <TabsList isNoMargin={isRectabgularTabs} direction={direction}>
+      <TabsList>
         {tabs.map(({ tabName, iconVariant, description }) => (
           <TabItem
-            isRectangular={isRectabgularTabs}
             key={tabName}
             isActive={tabName === activeTabName}
             tabName={tabName}
@@ -54,11 +51,5 @@ export const Tabs = ({
 Tabs.propTypes = {
   onSelectTab: PropTypes.func.isRequired,
   activeTabName: PropTypes.string.isRequired,
-  tabs: PropTypes.arrayOf(tabPropType).isRequired,
-  direction: PropTypes.oneOf(['row', 'column']),
-  isRectabgularTabs: PropTypes.bool
-}
-
-Tabs.defaultProps = {
-  isRectabgularTabs: false
+  tabs: PropTypes.arrayOf(tabPropType).isRequired
 }

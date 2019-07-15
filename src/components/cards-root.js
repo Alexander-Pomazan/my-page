@@ -1,5 +1,4 @@
-import React, { useState, useMemo } from 'react'
-import useMediaQuery from 'react-use-media-query-hook'
+import React, { useState } from 'react'
 import { styled } from 'linaria/react'
 
 import { MainContent, AdditionalInfo, Tabs } from 'src/components'
@@ -118,13 +117,6 @@ const TabsWrapper = styled.div`
 export const CardsRoot = () => {
   const [activeTabName, setActiveTab] = useState(tabs[0].tabName)
 
-  const isTablet = useMediaQuery(`(max-width: ${tabletBreakPoint}px)`)
-  const isPhone = useMediaQuery(`(max-width: ${phoneBreakPoint}px)`)
-  const tabsDirection = useMemo(
-    () => (isTablet && !isPhone ? 'column' : 'row'),
-    [isTablet, isPhone]
-  )
-
   return (
     <Wrapper>
       <Root>
@@ -135,8 +127,6 @@ export const CardsRoot = () => {
         <AdditionalInfoWrapper>
           <TabsWrapper>
             <Tabs
-              direction={tabsDirection}
-              isRectabgularTabs={isPhone}
               tabs={tabs}
               activeTabName={activeTabName}
               onSelectTab={setActiveTab}
