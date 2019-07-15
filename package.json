@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "ambient-cbg": "^1.0.4",
     "gatsby": "^2.13.12",
     "gatsby-image": "^2.2.4",
     "gatsby-plugin-linaria": "^1.2.2",

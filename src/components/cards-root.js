@@ -29,40 +29,40 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  justify-content: flex-start;
 
-  @media screen and (max-width: ${tabletBreakPoint}px) {
+  @media screen and (min-width: ${phoneBreakPoint}px) {
     flex-direction: column;
-  }
-
-  @media screen and (max-width: ${phoneBreakPoint}px) {
-    width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
   }
 `
 
 const Root = styled.div`
   width: 100%;
-  max-width: 50rem;
-  height: 26rem;
   max-height: 95%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 
-  @media screen and (max-width: ${tabletBreakPoint}px) {
-    flex-direction: column;
+  @media screen and (min-width: ${phoneBreakPoint}px) {
     height: auto;
     width: 95%;
+
+    align-items: center;
   }
 
-  @media screen and (max-width: ${phoneBreakPoint}px) {
-    width: 100%;
+  @media screen and (min-width: ${tabletBreakPoint}px) {
+    max-width: 95%;
+    width: 50rem;
+    height: 26rem;
+    flex-direction: row;
   }
 `
 
 const MainContentWrapper = styled.div`
   flex-grow: 1;
   flex-shrink: 0;
+  flex-basis: 43%;
   background-color: var(--color-paper);
   box-shadow: var(--elevation-10);
   z-index: 10;
@@ -76,9 +76,9 @@ const MainContentWrapper = styled.div`
 
 const AdditionalInfoWrapper = styled.div`
   flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 50%;
-
+  flex-shrink: 1;
+  flex-basis: 57%;
+  width: 57%;
   background-color: var(--color-paper);
   box-shadow: var(--elevation-4);
   z-index: 5;

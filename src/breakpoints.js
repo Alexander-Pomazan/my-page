@@ -1,2 +1,2 @@
-export const tabletBreakPoint = 800
+export const tabletBreakPoint = 895
 export const phoneBreakPoint = 450

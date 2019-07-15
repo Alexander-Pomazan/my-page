@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
+import { Shift } from 'ambient-cbg'
 
 const Root = styled.div`
   width: 100vw;
@@ -10,7 +11,12 @@ const Root = styled.div`
 `
 
 export const Layout = ({ children }) => {
-  return <Root>{children}</Root>
+  return (
+    <Root>
+      <Shift />
+      {children}
+    </Root>
+  )
 }
 
 Layout.propTypes = {
