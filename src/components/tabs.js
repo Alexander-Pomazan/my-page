@@ -9,18 +9,35 @@ const Root = styled.nav``
 
 const TabsList = styled.ul`
   display: flex;
+  flex-direction: ${(p) => p.direction};
 
   > *:not(:last-child) {
-    margin-right: 1.5rem;
+    margin-right: ${(p) =>
+      !p.isNoMargin && p.direction === 'row' ? '1.5rem' : 0};
+    margin-bottom: ${(p) =>
+      !p.isNoMargin && p.direction === 'column' ? '1.5rem' : 0};
+  }
+
+  @media screen and (max-width: var(--breakpoint-tablet)) {
+    flex-direction: column;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
   }
 `
 
-export const Tabs = ({ onSelectTab, activeTabName, tabs }) => {
+export const Tabs = ({
+  onSelectTab,
+  activeTabName,
+  tabs,
+  isRectabgularTabs,
+  direction
+}) => {
   return (
     <Root aria-label="Information tabs" role="tablist">
-      <TabsList>
+      <TabsList isNoMargin={isRectabgularTabs} direction={direction}>
         {tabs.map(({ tabName, iconVariant, description }) => (
           <TabItem
+            isRectangular={isRectabgularTabs}
             key={tabName}
             isActive={tabName === activeTabName}
             tabName={tabName}
@@ -37,5 +54,11 @@ export const Tabs = ({ onSelectTab, activeTabName, tabs }) => {
 Tabs.propTypes = {
   onSelectTab: PropTypes.func.isRequired,
   activeTabName: PropTypes.string.isRequired,
-  tabs: PropTypes.arrayOf(tabPropType).isRequired
+  tabs: PropTypes.arrayOf(tabPropType).isRequired,
+  direction: PropTypes.oneOf(['row', 'column']),
+  isRectabgularTabs: PropTypes.bool
+}
+
+Tabs.defaultProps = {
+  isRectabgularTabs: false
 }
