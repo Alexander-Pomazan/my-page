@@ -33,8 +33,8 @@ const Wrapper = styled.div`
   align-items: flex-start;
 
   @media screen and (min-width: ${phoneBreakPoint}px) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     justify-content: center;
     align-items: center;
   }
@@ -107,7 +107,7 @@ const AdditionalInfoWrapper = styled.div`
 const TabsWrapper = styled.div`
   @media screen and (min-width: ${phoneBreakPoint}px) {
     position: absolute;
-    right: calc(100% + 1.5rem);
+    right: calc(100% + 1rem);
     top: 1rem;
   }
 
@@ -115,7 +115,7 @@ const TabsWrapper = styled.div`
     position: absolute;
     right: auto;
     top: auto;
-    bottom: calc(100% + 1.5rem);
+    bottom: calc(100% + 1rem);
     left: 1rem;
   }
 `

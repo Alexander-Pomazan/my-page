@@ -148,7 +148,7 @@ const skills = [
     technologyColor: 'rgba(0,122,204, 0.5)',
     iconSize: '55%',
     iconVariant: 'typescript',
-    skillName: 'Typecript',
+    skillName: 'Typescript',
     contrastTextColor: '#0074C2'
   }
 ]
