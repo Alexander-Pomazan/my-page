@@ -12,7 +12,7 @@ html, body {
 
 
 html, body {
-  font-size: calc(14px + 0.2vw);
+  font-size: 14px;
 }
 
 
@@ -30,13 +30,19 @@ html, body {
 
 @media screen and (min-width: 980px) {
   html, body {
-    font-size: calc(14px + 0.5vw);
+    font-size: calc(16px + 0.5vw);
   }
 }
 
 @media screen and (min-width: 1024px) {
   html, body {
-    font-size: calc(24px + 0.3vw);
+    font-size: calc(16px + 0.5vw);
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-aspect-ratio: 3/4) {
+  html, body {
+    font-size: calc(22px + 0.5vw);
   }
 }
 

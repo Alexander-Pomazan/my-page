@@ -1,12 +1,10 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import { styled } from 'linaria/react'
+import BackgroundImage from 'gatsby-background-image'
+import Image from 'gatsby-image'
 
 import { Links } from 'src/components'
-
-const backgroundImageUrl =
-  'https://www-tc.pbs.org/wgbh/nova/media/original_images/nova-wonders-whats-the-universe-made-of-hero_WxVWP1e.jpg'
-const mockAvatarSrc =
-  'https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-1/c7.10.183.183a/p200x200/15326393_1697302760581886_8811592823422174948_n.jpg?_nc_cat=104&_nc_oc=AQlaeYu2glCz0WjqVmYuZxlErM-CIvT-4KsmxBoQ4AsEkfXa_1DNMYGpYWc6dEbpljI&_nc_ht=scontent-frx5-1.xx&oh=da91009a0aa9f53b0a694ff382368918&oe=5DB94E61'
 
 const links = [
   {
@@ -43,11 +41,7 @@ const Root = styled.header`
   align-items: center;
 `
 
-const BackgroundImage = styled.div`
-  background-image: url(${backgroundImageUrl});
-  background-size: cover;
-  background-repeat: no-repeat;
-
+const StyledBackgroundImage = styled(BackgroundImage)`
   height: 11rem;
   width: 100%;
 
@@ -59,7 +53,7 @@ const BackgroundImage = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 6rem, 50% 100%, 0 6rem);
 `
 
-const Avatar = styled.img`
+const Avatar = styled(Image)`
   width: 9rem;
   height: 9rem;
   border-radius: 50%;
@@ -84,11 +78,41 @@ const Description = styled.p`
 `
 
 export const MainContent = () => {
+  const { background, avatar } = useStaticQuery(graphql`
+    query {
+      background: file(relativePath: { eq: "background.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+
+      avatar: file(relativePath: { eq: "avatar.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(avatar)
+
   return (
     <Root>
-      <BackgroundImage />
+      <StyledBackgroundImage
+        title="background image"
+        fadeIn="soft"
+        style={{ position: 'absolute' }}
+        fluid={background.childImageSharp.fluid}
+      />
 
-      <Avatar src={mockAvatarSrc} alt="Pomazan Alexander photo" />
+      <Avatar
+        fluid={avatar.childImageSharp.fluid}
+        alt="Pomazan Alexander photo"
+      />
 
       <Title>Alexander Pomazan</Title>
 
