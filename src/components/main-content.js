@@ -98,8 +98,6 @@ export const MainContent = () => {
     }
   `)
 
-  console.log(avatar)
-
   return (
     <Root>
       <StyledBackgroundImage
