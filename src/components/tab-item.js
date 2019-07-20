@@ -84,11 +84,9 @@ const Tab = styled.button`
     }
   }
 
-  :after {
-    box-shadow: var(--elevation-3);
-    opacity: 0;
-
-    @media screen and (min-width: ${phoneBreakPoint}px) {
+  @media screen and (min-width: ${phoneBreakPoint}px) {
+    :after {
+      opacity: 0;
       box-shadow: var(--elevation-3);
     }
   }
@@ -96,15 +94,15 @@ const Tab = styled.button`
   :focus,
   :hover {
     outline: none;
-    :before {
-      opacity: 0;
-    }
-
-    :after {
-      opacity: 1;
-    }
-
     @media screen and (min-width: ${phoneBreakPoint}px) {
+      :before {
+        opacity: 0;
+      }
+
+      :after {
+        opacity: 1;
+      }
+
       transform: scale(1.05);
     }
   }

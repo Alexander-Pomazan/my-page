@@ -67,11 +67,15 @@ const MainContentWrapper = styled.div`
   flex-shrink: 0;
   flex-basis: 43%;
   background-color: var(--color-paper);
-  box-shadow: var(--elevation-10);
+  box-shadow: var(--elevation-1);
   z-index: 10;
 
   height: auto;
   width: 100%;
+
+  @media screen and (min-width: ${phoneBreakPoint}px) {
+    box-shadow: var(--elevation-10);
+  }
 
   @media screen and (min-width: ${tabletBreakPoint}px) {
     height: 100%;
