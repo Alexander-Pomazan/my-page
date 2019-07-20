@@ -26,18 +26,22 @@ const tabs = Object.values(tabNames)
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 
   @media screen and (min-width: ${phoneBreakPoint}px) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     justify-content: center;
     align-items: center;
   }
 `
 
 const Root = styled.div`
+  flex-grow: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -65,51 +69,50 @@ const MainContentWrapper = styled.div`
   background-color: var(--color-paper);
   box-shadow: var(--elevation-10);
   z-index: 10;
-  height: 100%;
 
-  @media screen and (max-width: ${tabletBreakPoint}px) {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
+
+  @media screen and (min-width: ${tabletBreakPoint}px) {
+    height: 100%;
+    width: auto;
   }
 `
 
 const AdditionalInfoWrapper = styled.div`
-  flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 57%;
-  width: 57%;
+  flex-grow: 1;
   background-color: var(--color-paper);
   box-shadow: var(--elevation-4);
   z-index: 5;
   position: relative;
-  height: 80%;
 
-  @media screen and (max-width: ${tabletBreakPoint}px) {
-    height: auto;
+  @media screen and (min-width: ${phoneBreakPoint}px) {
     width: 75%;
     flex-basis: auto;
   }
 
-  @media screen and (max-width: ${phoneBreakPoint}px) {
-    width: 100%;
-    flex-grow: 1;
+  @media screen and (min-width: ${tabletBreakPoint}px) {
+    flex-basis: auto;
+    height: 80%;
+    flex-basis: 57%;
+    width: 57%;
   }
 `
 
 const TabsWrapper = styled.div`
-  position: absolute;
-  bottom: calc(100% + 1.5rem);
-  left: 1rem;
-
-  @media screen and (max-width: ${tabletBreakPoint}px) {
-    bottom: auto;
-    left: auto;
+  @media screen and (min-width: ${phoneBreakPoint}px) {
+    position: absolute;
     right: calc(100% + 1.5rem);
     top: 1rem;
   }
 
-  @media screen and (max-width: ${phoneBreakPoint}px) {
-    position: static;
+  @media screen and (min-width: ${tabletBreakPoint}px) {
+    position: absolute;
+    right: auto;
+    top: auto;
+    bottom: calc(100% + 1.5rem);
+    left: 1rem;
   }
 `
 
