@@ -2,14 +2,7 @@
 export const setupAnimation = (canvasNode) =>  {
   var canvas = canvasNode,
     context = canvas.getContext('2d'),
-    canvasWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth,
-    canvasHeight =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight,
+
     requestAnimationFrame =
       window.requestAnimationFrame ||
       window.mozRequestAnimationFrame ||
@@ -17,21 +10,15 @@ export const setupAnimation = (canvasNode) =>  {
       window.msRequestAnimationFrame
 
   const resizeCanvasToWindow = (canvas) => {
-    const canvasWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth
-    const canvasHeight =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight
-
+    const canvasParent = canvas.parentElement
+    const canvasWidth = canvasParent.offsetWidth
+    const canvasHeight = canvasParent.offsetHeight
 
     canvas.setAttribute('width', canvasWidth)
     canvas.setAttribute('height', canvasHeight)
   }
 
-  window.addEventListener('onresizeend', () => resizeCanvasToWindow(canvas), false)
+  window.addEventListener('resize', () => resizeCanvasToWindow(canvas), false)
   
   var persons = [],
     numberOfFirefly = 30,

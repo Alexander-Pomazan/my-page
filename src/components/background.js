@@ -9,6 +9,10 @@ const Canvas = styled.canvas`
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
 `
 
 export const Background = () => {
@@ -20,5 +24,5 @@ export const Background = () => {
 
   if (isPhone) return null
 
-  return <Canvas ref={canvasRef} />
+  return <Canvas height="100%" width="100%" ref={canvasRef} />
 }
