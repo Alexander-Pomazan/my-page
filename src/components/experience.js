@@ -24,6 +24,7 @@ const WorkDate = styled.span`
 const CompanyName = styled.h3`
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  white-space: nowrap;
 `
 
 const appearAnimationDelayBase = 45

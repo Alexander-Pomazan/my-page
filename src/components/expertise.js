@@ -43,7 +43,7 @@ const Chip = styled.li`
   vertical-align: middle;
   justify-content: center;
 
-  border: 1px solid var(--technology-color);
+  border: 2px solid var(--technology-color);
   background-color: transparent;
 `
 
@@ -56,7 +56,7 @@ const ChipsIconWrapper = styled.div`
   width: 2rem;
   align-self: flex-start;
   background-color: var(--technology-color);
-  margin-left: -1px;
+  margin-left: -2px;
 `
 
 const ChipsText = styled.span`
@@ -68,84 +68,84 @@ const ChipsText = styled.span`
 
 const skills = [
   {
-    technologyColor: 'rgba(227, 79, 38, 1)',
+    technologyColor: '#E34F26',
     iconSize: '65%',
     iconVariant: 'html-colored',
     skillName: 'HTML',
     contrastTextColor: '#C74F00'
   },
   {
-    technologyColor: 'rgba(12, 115, 184, 0.8)',
+    technologyColor: '#3C8FC6',
     iconSize: '65%',
     iconVariant: 'css-colored',
     skillName: 'CSS',
     contrastTextColor: '#0C78C0'
   },
   {
-    technologyColor: 'rgba(229, 162, 40, 0.8)',
+    technologyColor: '#EAB453',
     iconSize: '65%',
     iconVariant: 'javascript-colored',
     skillName: 'JavaScript',
     contrastTextColor: '#976911'
   },
   {
-    technologyColor: 'rgba(1, 1, 1, 0.4)',
+    technologyColor: '#999999',
     iconSize: '65%',
     iconVariant: 'bem',
     skillName: 'BEM',
     contrastTextColor: '#010101'
   },
   {
-    technologyColor: 'rgba(207, 100, 154, 0.5)',
+    technologyColor: '#E7B0CC',
     iconSize: '65%',
     iconVariant: 'sass',
     skillName: 'SASS',
     contrastTextColor: '#C63E7E'
   },
   {
-    technologyColor: 'rgba(118,74,188, 0.5)',
+    technologyColor: '#BAA4DD',
     iconSize: '65%',
     iconVariant: 'redux',
     skillName: 'Redux',
     contrastTextColor: '#7E54BF'
   },
   {
-    technologyColor: 'rgba(32,35,42, 0.9)',
+    technologyColor: '#35383E',
     iconSize: '65%',
     iconVariant: 'react',
     skillName: 'React',
     contrastTextColor: '#20232A'
   },
   {
-    technologyColor: 'rgba(51,51,51, 0.3)',
+    technologyColor: '#C1C1C1',
     iconSize: '65%',
     iconVariant: 'apollo',
     skillName: 'Apollo',
     contrastTextColor: '#666666'
   },
   {
-    technologyColor: 'rgba(0,0,0, 0.4)',
+    technologyColor: '#999999',
     iconSize: '65%',
     iconVariant: 'next',
     skillName: 'Next',
     contrastTextColor: '#666666'
   },
   {
-    technologyColor: 'rgb(218, 70, 72)',
+    technologyColor: '#DA4548',
     iconSize: '65%',
     iconVariant: 'gulp',
     skillName: 'Gulp',
     contrastTextColor: '#D52F31'
   },
   {
-    technologyColor: 'rgb(142,214,251)',
+    technologyColor: '#8ED5FB',
     iconSize: '65%',
     iconVariant: 'webpack',
     skillName: 'Webpack',
     contrastTextColor: '#0475B4'
   },
   {
-    technologyColor: 'rgba(0,122,204, 0.5)',
+    technologyColor: '#7FBCE5',
     iconSize: '55%',
     iconVariant: 'typescript',
     skillName: 'Typescript',
