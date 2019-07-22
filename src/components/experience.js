@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 
+import { tabletBreakPoint } from 'src/breakpoints'
 import { TabHeader, Paragraph, FadeIn } from 'src/components'
 
 const Root = styled.section`
@@ -11,20 +12,36 @@ const Root = styled.section`
 
 const JetRuby = styled.a`
   color: #e35f07;
+  white-space: nowrap;
 `
 
 const WorkDate = styled.span`
-  margin-left: 1rem;
   font-weight: 500;
   color: var(--color-text-hint);
   font-size: 0.8rem;
   text-transform: uppercase;
+  white-space: nowrap;
 `
 
 const CompanyName = styled.h3`
-  font-size: 1.2rem;
   margin-bottom: 1rem;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  > *:last-child {
+    margin-top: 0.5rem;
+  }
+
+  @media screen and (min-width: ${tabletBreakPoint}px) {
+    margin-left: 0;
+    > *:last-child {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+    }
+    display: block;
+  }
 `
 
 const appearAnimationDelayBase = 45
@@ -71,8 +88,10 @@ export const Experience = ({ isActive }) => {
               <Paragraph>
                 After some time I got enough skill and developed several
                 projects on my own. For the most part these projects were SaaS
-                apps with complex logic and rich functionality (editors,
-                interactive chart dashboards).
+                apps with complicated logic and rich functionality (editors,
+                interactive chart dashboard, etc.). During this time I solved a
+                lot of nontrivial tasks of handling of complex user
+                interactions.
               </Paragraph>
             </FadeIn>
           </article>
