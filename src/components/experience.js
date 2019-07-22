@@ -57,8 +57,8 @@ export const Experience = ({ isActive }) => {
               animationDelay={`${appearAnimationDelayBase * 3}ms`}
             >
               <Paragraph>
-                Right now JetRuby agency is the first and only company I worked
-                with. Since my first day here I was working with a team of
+                Right now JetRuby Agency is the first and only company I&apos;ve
+                worked with. Since my first day here I cooperated with a team of
                 brilliant engineers and helped them develop large and complex
                 React SPA&apos;s.
               </Paragraph>

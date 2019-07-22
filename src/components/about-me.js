@@ -32,9 +32,9 @@ export const AboutMe = ({ isActive }) => (
       animationDelay={`${appearAnimationDelayBase * 1.5}ms`}
     >
       <Paragraph>
-        When working with team, I always strive for creating an environment
-        where initiative and desire to create a perfect product is fostered and
-        hard effort is appreciated and rewarded. 
+        When working with team, I always strive to create an environment where
+        initiative and desire to develop a good product is fostered and hard
+        effort achnowledged and rewarded. 
       </Paragraph>
     </FadeIn>
     <FadeIn
@@ -42,8 +42,8 @@ export const AboutMe = ({ isActive }) => (
       animationDelay={`${appearAnimationDelayBase * 2}ms`}
     >
       <Paragraph>
-        Apart from programming I have several other hobbies like science,
-        guitar, stand-up comedy.
+        Apart from programming my other fields of interest are aerospace
+        engineering, guitar and stand-up comedy.
       </Paragraph>
     </FadeIn>
   </Root>
