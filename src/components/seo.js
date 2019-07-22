@@ -22,11 +22,8 @@ export function SEO({ description, lang, meta, title }) {
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      htmlAttributes={{ lang }}
+      title={site.siteMetadata.title}
       meta={[
         {
           name: `description`,
@@ -47,10 +44,6 @@ export function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:card`,
           content: `summary`
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author
         },
         {
           name: `twitter:title`,
