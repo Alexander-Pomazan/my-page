@@ -23,6 +23,8 @@ const IconsWrapper = styled.div`
   svg {
     transition: opacity var(--transition-medium);
     fill: var(--color-grey-400);
+    height: 1.5rem;
+    width: 1.5rem;
 
     :nth-child(2) {
       fill: var(--color-primary-light);

@@ -59,6 +59,7 @@ const Root = styled.div`
     max-width: 95%;
     width: 50rem;
     height: 26rem;
+    max-height: 26rem;
     flex-direction: row;
   }
 `
@@ -100,7 +101,6 @@ const AdditionalInfoWrapper = styled.div`
   @media screen and (min-width: ${tabletBreakPoint}px) {
     flex-basis: auto;
     height: 80%;
-    flex-basis: 57%;
     width: 57%;
   }
 `

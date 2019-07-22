@@ -11,6 +11,9 @@ export const setupAnimation = (canvasNode) =>  {
 
   const resizeCanvasToWindow = (canvas) => {
     const canvasParent = canvas.parentElement
+
+    if (!canvasParent) return
+    
     const canvasWidth = canvasParent.offsetWidth
     const canvasHeight = canvasParent.offsetHeight
 

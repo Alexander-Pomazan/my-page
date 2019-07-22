@@ -57,6 +57,11 @@ const ChipsIconWrapper = styled.div`
   align-self: flex-start;
   background-color: var(--technology-color);
   margin-left: -2px;
+
+  svg {
+    height: ${(p) => p.iconSize};
+    width: ${(p) => p.iconSize};
+  }
 `
 
 const ChipsText = styled.span`
@@ -173,12 +178,8 @@ export const Expertise = ({ isActive }) => (
             }}
             elementIndex={index}
           >
-            <ChipsIconWrapper>
-              <Icon
-                height={skill.iconSize}
-                width={skill.iconSize}
-                variant={skill.iconVariant}
-              />
+            <ChipsIconWrapper iconSize={skill.iconSize}>
+              <Icon variant={skill.iconVariant} />
             </ChipsIconWrapper>
             <ChipsText>{skill.skillName}</ChipsText>
           </Chip>
