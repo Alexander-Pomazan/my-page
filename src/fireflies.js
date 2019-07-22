@@ -10,10 +10,10 @@ export const setupAnimation = (canvasNode) =>  {
       window.msRequestAnimationFrame
 
   const resizeCanvasToWindow = (canvas) => {
+    if (!canvas || !canvas.parentElement) return
+
     const canvasParent = canvas.parentElement
 
-    if (!canvasParent) return
-    
     const canvasWidth = canvasParent.offsetWidth
     const canvasHeight = canvasParent.offsetHeight
 
