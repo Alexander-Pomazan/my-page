@@ -84,9 +84,9 @@ html, body {
   --elevation-24: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
 
   /* colors */
-  --color-primary-light: #7986cb;
-  --color-primary-main: #3f51b5;
-  --color-primary-dark: #303f9f;
+  --color-primary-light: #8d83c3;
+  --color-primary-main: #5c5485;
+  --color-primary-dark: #2f294f;
   --color-primary-contrast-text: #fff;
 
   --color-secondary-light: #ff4081;

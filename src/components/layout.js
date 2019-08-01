@@ -11,7 +11,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  background-color: #2f294f;
+  background-color: var(--color-primary-dark);
   color: var(--color-text-primary);
 `
 
