@@ -27,16 +27,18 @@ export const AboutMe = ({ isActive }) => (
         to solving difficult tasks and always ready to learn a new skill. 
       </Paragraph>
     </FadeIn>
+
     <FadeIn
       isIn={isActive}
       animationDelay={`${appearAnimationDelayBase * 1.5}ms`}
     >
       <Paragraph>
-        When working with team, I always strive to create an environment where
-        initiative and desire to develop a good product is fostered and hard
-        effort achnowledged and rewarded. 
+        When working with a team, I always strive to create an environment where
+        initiative and desire to develop a great product is fostered and hard
+        effort is achnowledged and rewarded.
       </Paragraph>
     </FadeIn>
+
     <FadeIn
       isIn={isActive}
       animationDelay={`${appearAnimationDelayBase * 2}ms`}
