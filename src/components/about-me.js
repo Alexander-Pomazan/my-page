@@ -23,8 +23,8 @@ export const AboutMe = ({ isActive }) => (
     >
       <Paragraph>
         My main focus as a developer is to create web apps with beautiful
-        interface and smooth 60fps performance. I am  persistent when it comes
-        to solving difficult tasks and always ready to learn a new skill. 
+        interface and smooth 60fps performance. I am persistent when it comes to
+        solving difficult tasks and always ready to learn a new skill. 
       </Paragraph>
     </FadeIn>
 

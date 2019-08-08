@@ -90,8 +90,7 @@ export const Experience = ({ isActive }) => {
                 projects on my own. For the most part these projects were SaaS
                 apps with complicated logic and rich functionality (editors,
                 interactive chart dashboard, etc.). During this time I solved a
-                lot of nontrivial tasks of handling of complex user
-                interactions.
+                lot of nontrivial tasks of handling complex user interactions.
               </Paragraph>
             </FadeIn>
           </article>
