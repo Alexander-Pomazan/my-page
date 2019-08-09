@@ -35,7 +35,7 @@ export const AboutMe = ({ isActive }) => (
       <Paragraph>
         When working with a team, I always strive to create an environment where
         initiative and desire to develop a great product is fostered and hard
-        effort is achnowledged and rewarded.
+        effort is acknowledged and rewarded.
       </Paragraph>
     </FadeIn>
 
