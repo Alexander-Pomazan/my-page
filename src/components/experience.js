@@ -50,7 +50,7 @@ export const Experience = ({ isActive }) => {
   return (
     <Root>
       <FadeIn isIn={isActive}>
-        <TabHeader>Companies I worked with</TabHeader>
+        <TabHeader>Companies I&apos;ve worked with</TabHeader>
       </FadeIn>
 
       <ul>
