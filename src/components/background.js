@@ -20,7 +20,7 @@ export const Background = () => {
   const canvasRef = useRef(null)
   useEffect(() => {
     if (!isPhone && canvasRef.current) setupAnimation(canvasRef.current)
-  }, [isPhone, canvasRef.current])
+  }, [isPhone])
 
   if (isPhone) return null
 

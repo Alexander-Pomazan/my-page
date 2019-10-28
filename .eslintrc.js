@@ -23,7 +23,8 @@ module.exports = {
   "plugins": [
     "react",
     "import",
-    "prettier"
+    "prettier",
+    "react-hooks"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -52,6 +53,10 @@ module.exports = {
     "no-undef": "warn",
     "no-unused-vars": "warn",
     "no-use-before-define": "warn",
+
+    // hooks
+    "react-hooks/rules-of-hooks": 'error',
+    "react-hooks/exhaustive-deps": 'warn' ,
 
     // import
     "import/order": [
