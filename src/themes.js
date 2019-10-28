@@ -77,6 +77,48 @@ const colorsLight = css`
   --color-black: #000000;
   --color-white: #ffffff;
 `
+
+
+const colorsDark = css`
+  --color-primary-light: #716b8d;
+  --color-primary-main: #454060;
+  --color-primary-dark: #1c1a36;
+  --color-primary-contrast-text: #fff;
+  
+  --color-secondary-light: #ff4081;
+  --color-secondary-main: #f50057;
+  --color-secondary-dark: #c51162;
+  --color-secondary-contrast-text: #fff;
+
+  --color-error-light: #e57373;
+  --color-error-main: #f44336;
+  --color-error-dark: #d32f2f;
+  --color-error-contrastText: #fff;
+  
+  --color-text-primary: rgba(255, 255, 255, 0.87);
+  --color-text-secondary: rgba(255, 255, 255, 0.54);
+  --color-text-disabled: rgba(255, 255, 255, 0.38);
+  --color-text-hint: rgba(255, 255, 255, 0.55);
+  
+  --color-paper: #212121;
+  --color-default: #fafafa;
+  
+  --color-grey-50: #fafafa;
+  --color-grey-100: #f5f5f5;
+  --color-grey-200: #eeeeee;
+  --color-grey-300: #e0e0e0;
+  --color-grey-400: #bdbdbd;
+  --color-grey-500: #9e9e9e;
+  --color-grey-600: #757575;
+  --color-grey-700: #616161;
+  --color-grey-800: #424242;
+  --color-grey-900: #212121;
+  
+  
+  --color-black: #000000;
+  --color-white: #ffffff;
+`
 /* eslint-enable prettier/prettier */
 
 export const lightTheme = `${elevations} ${colorsLight} ${transitions} ${breakpoints}`
+export const darkTheme = `${elevations} ${colorsDark} ${transitions} ${breakpoints}`
