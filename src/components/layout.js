@@ -1,8 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
+import loadable from '@loadable/component'
 
-import { Background } from 'src/components'
+import { useMedia } from 'src/hooks'
+import { lightTheme } from 'src/themes'
+import { phoneBreakPoint } from 'src/breakpoints'
+
+const Background = loadable(async () => {
+  const { Background } = await import('./background')
+
+  // eslint-disable-next-line react/display-name
+  return (props) => <Background {...props} />
+})
 
 const Root = styled.div`
   width: 100vw;
@@ -16,9 +26,11 @@ const Root = styled.div`
 `
 
 export const Layout = ({ children }) => {
+  const isBackgroundShown = useMedia({ minWidth: phoneBreakPoint })
+
   return (
-    <Root>
-      <Background />
+    <Root className={lightTheme}>
+      {isBackgroundShown && <Background />}
 
       {children}
     </Root>
