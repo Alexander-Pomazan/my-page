@@ -14,7 +14,7 @@ const THEME_TRANSITIONS_TIME = 500
 
 const themeTransition = css`
   * {
-    transition: all ${THEME_TRANSITIONS_TIME}ms ease-in !important;
+    transition: all ${THEME_TRANSITIONS_TIME}ms ease-in;
   }
 `
 

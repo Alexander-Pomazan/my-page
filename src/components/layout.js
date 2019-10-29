@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 import loadable from '@loadable/component'
 
-import { useTheme } from 'src/components'
+import { useTheme, ThemeSwitch } from 'src/components'
 import { useMedia } from 'src/hooks'
 import { phoneBreakPoint } from 'src/breakpoints'
 import { isDarkTheme } from 'src/themes'
@@ -34,15 +34,16 @@ const DarkThemeBackdrop = styled.div`
   left: 0;
   display: block;
   pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.15);
   z-index: 10000;
   opacity: ${(p) => (p.isEnabled ? 1 : 0)};
 `
 
-const ThemeButton = styled.button`
+const ThemeSwitchWrapper = styled.div`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.8rem;
+  right: 2rem;
+  z-index: 5000;
 `
 
 export const Layout = ({ children }) => {
@@ -53,10 +54,13 @@ export const Layout = ({ children }) => {
   return (
     <Root className={theme}>
       {isBackgroundShown && <Background />}
-      <ThemeButton onClick={toggleTheme}>toggle theme</ThemeButton>
 
       {children}
       <DarkThemeBackdrop isEnabled={isDarkTheme(theme)} />
+
+      <ThemeSwitchWrapper>
+        <ThemeSwitch isDarkTheme={isDarkTheme(theme)} onChange={toggleTheme} />
+      </ThemeSwitchWrapper>
     </Root>
   )
 }
