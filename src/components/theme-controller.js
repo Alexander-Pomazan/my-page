@@ -22,7 +22,8 @@ const themeTransition = css`
 
 const ThemeContext = React.createContext()
 
-const themeFromLs = !!window ? window.localStorage.getItem('theme') : null
+const themeFromLs =
+  typeof window !== `undefined` ? window.localStorage.getItem('theme') : null
 
 export const useTheme = () => useContext(ThemeContext)
 
