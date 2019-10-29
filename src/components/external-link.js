@@ -20,7 +20,7 @@ const Link = styled.a`
       transform var(--transition-medium);
 
     :nth-child(1) {
-      fill: var(--color-grey-400);
+      fill: var(--color-text-hint);
     }
 
     :nth-child(2) {

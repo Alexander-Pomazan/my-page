@@ -42,6 +42,11 @@ const Root = styled.header`
 `
 
 const StyledBackgroundImage = styled(BackgroundImage)`
+  width: 100%;
+  height: 100%;
+`
+
+const ImageWrapper = styled.div`
   height: 11rem;
   width: 100%;
 
@@ -59,6 +64,7 @@ const Avatar = styled(Image)`
   border-radius: 50%;
   object-fit: contain;
   margin-bottom: 0.5rem;
+  position: relative;
 `
 
 const Title = styled.h1`
@@ -100,12 +106,14 @@ export const MainContent = () => {
 
   return (
     <Root>
-      <StyledBackgroundImage
-        title="background image"
-        fadeIn="soft"
-        style={{ position: 'absolute' }}
-        fluid={background.childImageSharp.fluid}
-      />
+      <ImageWrapper>
+        <StyledBackgroundImage
+          title="background image"
+          fadeIn="soft"
+          style={{ position: 'absolute' }}
+          fluid={background.childImageSharp.fluid}
+        />
+      </ImageWrapper>
 
       <Avatar
         fluid={avatar.childImageSharp.fluid}

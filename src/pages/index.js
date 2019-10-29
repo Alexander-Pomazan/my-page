@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SEO, Layout, CardsRoot } from 'src/components'
+import { SEO, Layout, CardsRoot, ThemeController } from 'src/components'
 
 import 'reset-css'
 import '../global.css'
@@ -13,10 +13,12 @@ console.log(
 
 const IndexPage = () => {
   return (
-    <Layout>
-      <SEO title="Home" />
-      <CardsRoot />
-    </Layout>
+    <ThemeController>
+      <Layout>
+        <SEO title="Home" />
+        <CardsRoot />
+      </Layout>
+    </ThemeController>
   )
 }
 

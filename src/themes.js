@@ -35,7 +35,7 @@ const breakpoints = css`
 `
 
 const transitions = css`
-  --transition-medium: 0.2s ease-out;
+  --transition-medium: 0.2s ease-in;
 `
 
 const colorsLight = css`
@@ -44,9 +44,9 @@ const colorsLight = css`
   --color-primary-dark: #2f294f;
   --color-primary-contrast-text: #fff;
   
-  --color-secondary-light: #ff4081;
-  --color-secondary-main: #f50057;
-  --color-secondary-dark: #c51162;
+  --color-secondary-light: #c3e9fc;
+  --color-secondary-main: #92b7c9;
+  --color-secondary-dark: #638798;
   --color-secondary-contrast-text: #fff;
 
   --color-error-light: #e57373;
@@ -62,21 +62,57 @@ const colorsLight = css`
   --color-paper: #fff;
   --color-default: #fafafa;
   
-  --color-grey-50: #fafafa;
-  --color-grey-100: #f5f5f5;
-  --color-grey-200: #eeeeee;
-  --color-grey-300: #e0e0e0;
-  --color-grey-400: #bdbdbd;
-  --color-grey-500: #9e9e9e;
-  --color-grey-600: #757575;
-  --color-grey-700: #616161;
-  --color-grey-800: #424242;
-  --color-grey-900: #212121;
+  --color-black: #000000;
+  --color-white: #ffffff;
+`
+
+
+const colorsDark = css`
+  --color-primary-light: #716b8d;
+  --color-primary-main: #454060;
+  --color-primary-dark: #1c1a36;
+  --color-primary-contrast-text: #fff;
   
+  --color-secondary-light: #ffffed;
+  --color-secondary-main: #ebf4ba;
+  --color-secondary-dark: #b8c18a;
+  --color-secondary-contrast-text: #fff;
+
+  --color-error-light: #e57373;
+  --color-error-main: #f44336;
+  --color-error-dark: #d32f2f;
+  --color-error-contrastText: #fff;
+  
+  --color-text-primary: rgba(255, 255, 255, 0.87);
+  --color-text-secondary: rgba(255, 255, 255, 0.54);
+  --color-text-disabled: rgba(255, 255, 255, 0.38);
+  --color-text-hint: rgba(255, 255, 255, 0.55);
+  
+  --color-paper: #212121;
+  --color-default: #fafafa;
   
   --color-black: #000000;
   --color-white: #ffffff;
 `
 /* eslint-enable prettier/prettier */
 
-export const lightTheme = `${elevations} ${colorsLight} ${transitions} ${breakpoints}`
+const lightTheme = `${elevations} ${colorsLight} ${transitions} ${breakpoints}`
+const darkTheme = `${elevations} ${colorsDark} ${transitions} ${breakpoints}`
+
+export const Themes = Object.freeze({
+  LIGHT: lightTheme,
+  DARK: darkTheme
+})
+
+export const isDarkTheme = (theme) => theme === Themes.DARK
+
+export const visuallyHidden = css`
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+`

@@ -65,7 +65,7 @@ const ChipsIconWrapper = styled.div`
 `
 
 const ChipsText = styled.span`
-  color: var(--contrast-text-color);
+  color: var(--color-text-primary);
   font-weight: 500;
   padding-left: 0.4rem;
   padding-right: 0.8rem;
