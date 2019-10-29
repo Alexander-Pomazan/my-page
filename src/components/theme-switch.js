@@ -5,6 +5,8 @@ import { styled } from 'linaria/react'
 import { visuallyHidden } from 'src/themes'
 
 const Root = styled.label`
+  box-shadow: var(--elevation-21);
+  border: 2px solid ${(p) => (p.isChecked ? `#6936C9` : `#83d8ff`)};
   cursor: pointer;
   display: flex;
   align-items: center;
