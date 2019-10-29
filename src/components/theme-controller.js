@@ -1,6 +1,7 @@
 import React, {
   useMemo,
   useState,
+  useEffect,
   useLayoutEffect,
   useContext,
   useCallback
@@ -8,6 +9,7 @@ import React, {
 import PropTypes from 'prop-types'
 import { css } from 'linaria'
 
+import { useMedia } from 'src/hooks'
 import { Themes } from 'src/themes'
 
 const THEME_TRANSITIONS_TIME = 500
@@ -20,10 +22,21 @@ const themeTransition = css`
 
 const ThemeContext = React.createContext()
 
+const themeFromLs = !!window ? window.localStorage.getItem('theme') : null
+
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeController = ({ children }) => {
-  const [theme, setTheme] = useState(Themes.DARK)
+  const prefersDarkTheme = useMedia({ prefersDarkTheme: 'dark' })
+
+  const preferredScheme = useMemo(
+    () => (prefersDarkTheme ? Themes.DARK : Themes.LIGHT),
+    [prefersDarkTheme]
+  )
+
+  const initialState = themeFromLs || preferredScheme
+
+  const [theme, setTheme] = useState(initialState)
   const [isChangingTheme, setIsChangingTheme] = useState(false)
 
   const toggleTheme = useCallback(() => {
@@ -54,6 +67,8 @@ export const ThemeController = ({ children }) => {
       window.clearTimeout(timeoutId)
     }
   }, [isChangingTheme])
+
+  useEffect(() => window.localStorage.setItem('theme', theme), [theme])
 
   const contextValue = useMemo(
     () => ({
