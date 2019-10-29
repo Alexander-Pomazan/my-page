@@ -108,13 +108,12 @@ const AdditionalInfoWrapper = styled.div`
 const TabsWrapper = styled.div`
   @media screen and (min-width: ${phoneBreakPoint}px) {
     position: absolute;
-    right: calc(100% + 1rem);
+    left: calc(100% + 1rem);
     top: 1rem;
   }
 
   @media screen and (min-width: ${tabletBreakPoint}px) {
     position: absolute;
-    right: auto;
     top: auto;
     bottom: calc(100% + 1rem);
     left: 1rem;
