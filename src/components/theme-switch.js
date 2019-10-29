@@ -14,8 +14,7 @@ const Root = styled.label`
   height: 1.8rem;
   background-color: ${(p) => (p.isChecked ? `#6936C9` : `#83d8ff`)};
   border-radius: 1rem;
-  background-image: ${(p) =>
-    p.isChecked ? `url(/night.svg)` : `url(/day.svg)`};
+  background-image: ${(p) => (p.isChecked ? `url(night.svg)` : `url(day.svg)`)};
   position: relative;
   background-position: center;
   background-size: cover;
@@ -58,8 +57,7 @@ const VisibleCheckbox = styled.div`
 
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   background-color: ${(p) => (p.isChecked ? `#eff9ff` : `#ff8742`)};
-  background-image: ${(p) =>
-    p.isChecked ? `url(/moon.svg)` : `url(/sun.svg)`};
+  background-image: ${(p) => (p.isChecked ? `url(moon.svg)` : `url(sun.svg)`)};
 
   box-shadow: ${(p) =>
     p.isChecked
