@@ -83,6 +83,7 @@ export const ThemeSwitch = ({ isDarkTheme, onChange }) => {
     <Root isChecked={isDarkTheme}>
       <VisibleCheckbox isChecked={isDarkTheme} />
       <input
+        aria-label="toggle theme"
         type="checkbox"
         className={visuallyHidden}
         onChange={onChange}
