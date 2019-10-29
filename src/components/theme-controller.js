@@ -20,7 +20,10 @@ const themeTransition = css`
   }
 `
 
-const ThemeContext = React.createContext()
+const ThemeContext = React.createContext({
+  theme: Themes.LIGHT,
+  toggleTheme: () => {}
+})
 
 const themeFromLs =
   typeof window !== `undefined` ? window.localStorage.getItem('theme') : null
