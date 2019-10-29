@@ -96,5 +96,12 @@ const colorsDark = css`
 `
 /* eslint-enable prettier/prettier */
 
-export const lightTheme = `${elevations} ${colorsLight} ${transitions} ${breakpoints}`
-export const darkTheme = `${elevations} ${colorsDark} ${transitions} ${breakpoints}`
+const lightTheme = `${elevations} ${colorsLight} ${transitions} ${breakpoints}`
+const darkTheme = `${elevations} ${colorsDark} ${transitions} ${breakpoints}`
+
+export const Themes = Object.freeze({
+  LIGHT: lightTheme,
+  DARK: darkTheme
+})
+
+export const isDarkTheme = (theme) => theme === Themes.DARK

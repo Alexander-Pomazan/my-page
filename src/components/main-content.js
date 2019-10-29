@@ -4,8 +4,6 @@ import { styled } from 'linaria/react'
 import BackgroundImage from 'gatsby-background-image'
 import Image from 'gatsby-image'
 
-import { useThemeVariant, Themes } from './layout'
-
 import { Links } from 'src/components'
 
 const links = [
@@ -58,18 +56,6 @@ const ImageWrapper = styled.div`
   z-index: -1;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 6rem, 50% 100%, 0 6rem);
-
-  :after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: ${(p) => (p.darkFilter ? 0.6 : 0)};
-  }
 `
 
 const Avatar = styled(Image)`
@@ -79,18 +65,6 @@ const Avatar = styled(Image)`
   object-fit: contain;
   margin-bottom: 0.5rem;
   position: relative;
-
-  :after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: ${(p) => (p.darkFilter ? 0.4 : 0)};
-  }
 `
 
 const Title = styled.h1`
@@ -110,9 +84,6 @@ const Description = styled.p`
 `
 
 export const MainContent = () => {
-  const themeVariant = useThemeVariant()
-  const isDarkTheme = themeVariant === Themes.DARK
-
   const { background, avatar } = useStaticQuery(graphql`
     query {
       background: file(relativePath: { eq: "background.jpg" }) {
@@ -135,7 +106,7 @@ export const MainContent = () => {
 
   return (
     <Root>
-      <ImageWrapper darkFilter={isDarkTheme}>
+      <ImageWrapper>
         <StyledBackgroundImage
           title="background image"
           fadeIn="soft"
@@ -145,7 +116,6 @@ export const MainContent = () => {
       </ImageWrapper>
 
       <Avatar
-        darkFilter={isDarkTheme}
         fluid={avatar.childImageSharp.fluid}
         alt="Pomazan Alexander photo"
       />

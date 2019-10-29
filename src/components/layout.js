@@ -1,18 +1,12 @@
-import React, {
-  useMemo,
-  useState,
-  useEffect,
-  useContext,
-  useCallback
-} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
-import { css } from 'linaria'
 import loadable from '@loadable/component'
 
+import { useTheme } from 'src/components'
 import { useMedia } from 'src/hooks'
-import { lightTheme, darkTheme } from 'src/themes'
 import { phoneBreakPoint } from 'src/breakpoints'
+import { isDarkTheme } from 'src/themes'
 
 const Background = loadable(async () => {
   const { Background } = await import('./background')
@@ -32,10 +26,18 @@ const Root = styled.div`
   color: var(--color-text-primary);
 `
 
-export const Themes = Object.freeze({
-  LIGHT: lightTheme,
-  DARK: darkTheme
-})
+const DarkThemeBackdrop = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  opacity: ${(p) => (p.isEnabled ? 1 : 0)};
+`
 
 const ThemeButton = styled.button`
   position: absolute;
@@ -43,58 +45,19 @@ const ThemeButton = styled.button`
   right: 10px;
 `
 
-const THEME_TRANSITIONS_TIME = 500
-
-const themeTransition = css`
-  * {
-    transition: all ${THEME_TRANSITIONS_TIME}ms ease-in !important;
-  }
-`
-
-const ThemeVariantContext = React.createContext(Themes.LIGHT)
-
-export const useThemeVariant = () => useContext(ThemeVariantContext)
-
 export const Layout = ({ children }) => {
   const isBackgroundShown = useMedia({ minWidth: phoneBreakPoint })
-  const [theme, setTheme] = useState(Themes.DARK)
-  const [isChangingTheme, setIsChangingTheme] = useState(false)
 
-  const handleToggleTheme = useCallback(() => {
-    setTheme((currentTheme) => {
-      if (currentTheme === Themes.DARK) return Themes.LIGHT
-
-      return Themes.DARK
-    })
-
-    setIsChangingTheme(true)
-  }, [])
-
-  useEffect(() => {
-    if (!isChangingTheme) return
-
-    const timeoutId = window.setTimeout(
-      () => setIsChangingTheme(false),
-      THEME_TRANSITIONS_TIME
-    )
-
-    return () => window.clearTimeout(timeoutId)
-  }, [isChangingTheme])
-
-  const rootClassName = useMemo(
-    () => [theme, isChangingTheme ? themeTransition : ''].join(' '),
-    [isChangingTheme, theme]
-  )
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <ThemeVariantContext.Provider value={theme}>
-      <Root className={rootClassName}>
-        {isBackgroundShown && <Background />}
-        <ThemeButton onClick={handleToggleTheme}>toggle theme</ThemeButton>
+    <Root className={theme}>
+      {isBackgroundShown && <Background />}
+      <ThemeButton onClick={toggleTheme}>toggle theme</ThemeButton>
 
-        {children}
-      </Root>
-    </ThemeVariantContext.Provider>
+      {children}
+      <DarkThemeBackdrop isEnabled={isDarkTheme(theme)} />
+    </Root>
   )
 }
 
