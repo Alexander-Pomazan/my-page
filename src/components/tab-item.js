@@ -105,12 +105,21 @@ const Tab = styled.button`
         opacity: 1;
       }
 
-      transform: scale(1.05);
+      svg {
+        opacity: 0;
+
+        :nth-child(2) {
+          opacity: 1;
+        }
+      }
+
+      transform: scale(1.15);
     }
   }
 
   &[aria-selected='true'] {
     z-index: 10;
+
     ${IconsWrapper} {
       svg {
         opacity: 0;

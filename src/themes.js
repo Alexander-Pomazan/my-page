@@ -99,12 +99,17 @@ const colorsDark = css`
 const lightTheme = `${elevations} ${colorsLight} ${transitions} ${breakpoints}`
 const darkTheme = `${elevations} ${colorsDark} ${transitions} ${breakpoints}`
 
-export const Themes = Object.freeze({
-  LIGHT: lightTheme,
-  DARK: darkTheme
+export const ThemesNames = Object.freeze({
+  LIGHT: 'LIGHT',
+  DARK: 'DARK'
 })
 
-export const isDarkTheme = (theme) => theme === Themes.DARK
+export const Themes = Object.freeze({
+  [ThemesNames.DARK]: darkTheme,
+  [ThemesNames.LIGHT]: lightTheme
+})
+
+export const isDarkTheme = (theme) => theme === Themes[ThemesNames.DARK]
 
 export const visuallyHidden = css`
   position: absolute !important;
