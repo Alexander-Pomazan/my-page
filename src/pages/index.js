@@ -7,7 +7,7 @@ import '../global.css'
 
 // eslint-disable-next-line no-console
 console.log(
-  '%cHello there, fellow engineer! Like my code? Check out more of it here: https://github.com/AlexOuttaspace',
+  '%cHello there, fellow engineer! Like my code? Check out more of it here: https://github.com/alexander-pomazan',
   'color: #7986cb;font-family:system-ui;font-size:1.5rem;-webkit-text-stroke: 0.1px #e57373;'
 )
 

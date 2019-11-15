@@ -120,7 +120,7 @@ const TabsWrapper = styled.div`
 
 const [firstTab] = tabs
 
-const initialTabName = firstTab.name
+const initialTabName = firstTab.tabName
 
 export const CardsRoot = () => {
   const [activeTabName, setActiveTab] = useState(initialTabName)

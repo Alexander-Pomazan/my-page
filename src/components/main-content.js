@@ -8,7 +8,7 @@ import { Links } from 'src/components'
 
 const links = [
   {
-    url: 'https://github.com/AlexOuttaspace',
+    url: 'https://github.com/alexander-pomazan',
     iconVariant: 'github',
     description: 'Visit my Github profile'
   },
