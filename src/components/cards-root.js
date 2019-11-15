@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { styled } from 'linaria/react'
 
 import { MainContent, AdditionalInfo, Tabs } from 'src/components'
@@ -120,17 +120,10 @@ const TabsWrapper = styled.div`
 
 const [firstTab] = tabs
 
-const initialTabName =
-  typeof window !== 'undefined'
-    ? window.localStorage.getItem('activeTabName') || firstTab.tabName
-    : firstTab.tabName
+const initialTabName = firstTab.name
 
 export const CardsRoot = () => {
   const [activeTabName, setActiveTab] = useState(initialTabName)
-
-  useEffect(() => window.localStorage.setItem('activeTabName', activeTabName), [
-    activeTabName
-  ])
 
   return (
     <Wrapper>
