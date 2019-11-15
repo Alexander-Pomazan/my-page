@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import { css } from 'linaria'
 
 import { ThemesNames, Themes } from 'src/themes'
-import { useMedia } from 'src/hooks'
+import { usePreferredTheme } from 'src/hooks'
 
 const THEME_TRANSITIONS_TIME = 500
 
@@ -25,22 +25,13 @@ const ThemeContext = React.createContext({
   toggleTheme: () => {}
 })
 
-const themeFromLs =
-  typeof window !== `undefined` ? window.localStorage.getItem('theme') : null
-
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeController = ({ children }) => {
-  const prefersDarkTheme = useMedia({ prefersDarkTheme: 'dark' })
-
-  const preferredScheme = useMemo(
-    () => (prefersDarkTheme ? ThemesNames.DARK : ThemesNames.LIGHT),
-    [prefersDarkTheme]
-  )
-
-  const initialState = themeFromLs || preferredScheme
+  const initialState = usePreferredTheme()
 
   const [themeName, setThemeName] = useState(initialState)
+
   const [isChangingTheme, setIsChangingTheme] = useState(false)
 
   const toggleTheme = useCallback(() => {

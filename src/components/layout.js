@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 import loadable from '@loadable/component'
 
 import { useTheme, ThemeSwitch } from 'src/components'
-import { useMedia } from 'src/hooks'
+import { useMedia, usePreferredTheme } from 'src/hooks'
 import { phoneBreakPoint } from 'src/breakpoints'
-import { isDarkTheme } from 'src/themes'
+import { isDarkTheme, ThemesNames } from 'src/themes'
 
 const Background = loadable(async () => {
   const { Background } = await import('./background')
@@ -48,8 +48,22 @@ const ThemeSwitchWrapper = styled.div`
 
 export const Layout = ({ children }) => {
   const isBackgroundShown = useMedia({ minWidth: phoneBreakPoint })
-
+  const preferredTheme = usePreferredTheme()
   const { theme, toggleTheme } = useTheme()
+
+  console.log('123')
+  const [, forceRerender] = useState()
+  useEffect(() => {
+    console.log(preferredTheme, ThemesNames.LIGHT)
+    if (preferredTheme !== ThemesNames.LIGHT) {
+      console.log('rerender!')
+      forceRerender(1)
+    }
+    /*
+     * running this effect once because react hydration doesn't
+     * update the theme.
+     */
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Root className={theme}>
