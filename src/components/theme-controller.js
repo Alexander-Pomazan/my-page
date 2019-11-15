@@ -30,8 +30,9 @@ export const useTheme = () => useContext(ThemeContext)
 export const ThemeController = ({ children }) => {
   const initialState = usePreferredTheme()
 
-  const [themeName, setThemeName] = useState(initialState)
-  console.log(themeName)
+  const [themeName, setThemeName] = useState()
+  useLayoutEffect(() => setThemeName(initialState), [initialState])
+
   const [isChangingTheme, setIsChangingTheme] = useState(false)
 
   const toggleTheme = useCallback(() => {

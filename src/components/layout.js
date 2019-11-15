@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 import loadable from '@loadable/component'
 
 import { useTheme, ThemeSwitch } from 'src/components'
-import { useMedia, usePreferredTheme } from 'src/hooks'
+import { useMedia } from 'src/hooks'
 import { phoneBreakPoint } from 'src/breakpoints'
-import { isDarkTheme, ThemesNames } from 'src/themes'
+import { isDarkTheme } from 'src/themes'
 
 const Background = loadable(async () => {
   const { Background } = await import('./background')
@@ -48,28 +48,8 @@ const ThemeSwitchWrapper = styled.div`
 
 export const Layout = ({ children }) => {
   const isBackgroundShown = useMedia({ minWidth: phoneBreakPoint })
-  const preferredTheme = usePreferredTheme()
+
   const { theme, toggleTheme } = useTheme()
-
-  // const [, forceUpdate] = useState()
-  // useEffect(() => {
-  //   forceUpdate()
-  // }, [])
-  console.log(theme)
-  const rootRef = useRef()
-
-  useEffect(() => {
-    console.log(rootRef)
-    console.log(theme)
-
-    const timeoutId = setTimeout(() => {
-      if (!rootRef.current) return
-      if (rootRef.current.className === theme) return
-      rootRef.current.className = theme
-    }, 5000)
-
-    return () => clearTimeout(timeoutId)
-  }, [theme])
 
   return (
     <Root className={theme}>
