@@ -22,9 +22,10 @@ export const AboutMe = ({ isActive }) => (
       animationDelay={`${appearAnimationDelayBase * 1}ms`}
     >
       <Paragraph>
-        My main focus as a developer is to create web apps with beautiful
-        interface and smooth 60fps performance. I am persistent when it comes to
-        solving difficult tasks and always ready to learn a new skill. 
+        My primary focus as a developer is creating web applications with
+        beautiful interfaces and smooth performance. I believe persistency is
+        key when it comes to solving difficult tasks, so I'm always ready to
+        learn a new skill.
       </Paragraph>
     </FadeIn>
 
@@ -44,8 +45,8 @@ export const AboutMe = ({ isActive }) => (
       animationDelay={`${appearAnimationDelayBase * 2}ms`}
     >
       <Paragraph>
-        Apart from programming my other fields of interest are aerospace
-        engineering, guitar and stand-up comedy.
+        Apart from programming my other fields of interest include aerospace
+        engineering, playing the guitar and stand-up comedy.
       </Paragraph>
     </FadeIn>
   </Root>
