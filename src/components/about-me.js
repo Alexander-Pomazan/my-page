@@ -24,8 +24,8 @@ export const AboutMe = ({ isActive }) => (
       <Paragraph>
         My primary focus as a developer is creating web applications with
         beautiful interfaces and smooth performance. I believe persistency is
-        key when it comes to solving difficult tasks, so I'm always ready to
-        learn a new skill.
+        key when it comes to solving difficult tasks, so I&apos;m always ready
+        to learn a new skill.
       </Paragraph>
     </FadeIn>
 

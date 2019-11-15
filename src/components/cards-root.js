@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { styled } from 'linaria/react'
 
 import { MainContent, AdditionalInfo, Tabs } from 'src/components'
 import { tabletBreakPoint, phoneBreakPoint } from 'src/breakpoints'
 
-const tabNames = [
+const tabs = [
   {
     tabName: 'expertise',
     iconVariant: 'expertise',
@@ -21,8 +21,6 @@ const tabNames = [
     description: 'About me'
   }
 ]
-
-const tabs = Object.values(tabNames)
 
 const Wrapper = styled.div`
   width: 100%;
@@ -120,8 +118,21 @@ const TabsWrapper = styled.div`
   }
 `
 
+const [firstTab] = tabs
+
+const initialTabName =
+  window !== undefined
+    ? window.localStorage.getItem('activeTabName') || firstTab.tabName
+    : firstTab.tabName
+
 export const CardsRoot = () => {
-  const [activeTabName, setActiveTab] = useState(tabs[0].tabName)
+  const [activeTabName, setActiveTab] = useState(initialTabName)
+
+  useEffect(() => window.localStorage.setItem('activeTabName', activeTabName), [
+    activeTabName
+  ])
+
+  console.log(initialTabName)
 
   return (
     <Wrapper>
