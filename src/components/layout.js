@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { styled } from 'linaria/react'
 import loadable from '@loadable/component'
@@ -51,19 +51,25 @@ export const Layout = ({ children }) => {
   const preferredTheme = usePreferredTheme()
   const { theme, toggleTheme } = useTheme()
 
-  console.log('123')
-  const [, forceRerender] = useState()
+  // const [, forceUpdate] = useState()
+  // useEffect(() => {
+  //   forceUpdate()
+  // }, [])
+  console.log(theme)
+  const rootRef = useRef()
+
   useEffect(() => {
-    console.log(preferredTheme, ThemesNames.LIGHT)
-    if (preferredTheme !== ThemesNames.LIGHT) {
-      console.log('rerender!')
-      forceRerender(1)
-    }
-    /*
-     * running this effect once because react hydration doesn't
-     * update the theme.
-     */
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    console.log(rootRef)
+    console.log(theme)
+
+    const timeoutId = setTimeout(() => {
+      if (!rootRef.current) return
+      if (rootRef.current.className === theme) return
+      rootRef.current.className = theme
+    }, 5000)
+
+    return () => clearTimeout(timeoutId)
+  }, [theme])
 
   return (
     <Root className={theme}>
