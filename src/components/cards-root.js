@@ -121,7 +121,7 @@ const TabsWrapper = styled.div`
 const [firstTab] = tabs
 
 const initialTabName =
-  window !== undefined
+  typeof window !== 'undefined'
     ? window.localStorage.getItem('activeTabName') || firstTab.tabName
     : firstTab.tabName
 
@@ -131,8 +131,6 @@ export const CardsRoot = () => {
   useEffect(() => window.localStorage.setItem('activeTabName', activeTabName), [
     activeTabName
   ])
-
-  console.log(initialTabName)
 
   return (
     <Wrapper>
