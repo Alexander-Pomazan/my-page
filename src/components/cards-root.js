@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react'
+import React, { useState } from 'react'
 import { styled } from 'linaria/react'
 
 import { MainContent, AdditionalInfo, Tabs } from 'src/components'
